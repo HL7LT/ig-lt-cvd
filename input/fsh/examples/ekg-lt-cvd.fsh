@@ -3,7 +3,9 @@ InstanceOf: EKGLtCvd
 Title: "Observation: EKG Normal (example)"
 Usage: #example
 * status = #final
-* code = $EKG#131328 "MDC_ECG_ELEC_POTL"
+// * code.coding[mdc] = $EKG#131328 "MDC_ECG_ELEC_POTL"
+// * code.coding[loinc] = $loinc#11524-6 "EKG study"
+// * code.coding[snomed] = $sct#268400002 "12 lead ECG"
 * subject = Reference(patient-male-example)
 * effectiveDateTime = "2015-02-19T09:30:35+01:00"
 * performer = Reference(practitioner-example) "A. Langeveld"

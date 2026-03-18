@@ -17,12 +17,10 @@ Description: "Electrocardiogram (EKG/ECG) observation using 12 leads and Sampled
 * code.coding ^slicing.discriminator[0].type = #value
 * code.coding ^slicing.discriminator[0].path = "system"
 * code.coding ^slicing.rules = #open
-* code.coding contains mdcCode 1..1 and sctCode 1..1
-
-* code.coding[mdcCode].system = $EKG
-* code.coding[mdcCode] = $EKG#131328 "MDC_ECG_ELEC_POTL"
-* code.coding[sctCode].system = $sct
-* code.coding[sctCode] = $sct#268400002 "12 lead ECG (procedure)"
+* code.coding contains mdc 1..1 and snomed 1..1 and loinc 0..1
+* code.coding[mdc] = $EKG#131328 "MDC_ECG_ELEC_POTL"
+* code.coding[snomed] = $sct#268400002 "12 lead ECG"
+* code.coding[loinc] = $loinc#11524-6 "EKG study"
 
 * subject 1..
 * subject only Reference(PatientLt)

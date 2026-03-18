@@ -1,38 +1,61 @@
-# Lietuvos bazės diegimo vadovas
+# Lietuvos širdies ir kraujagyslių ligų prevencijos diegimo vadovas
 
-## Įvadas ir Tikslas
+## Įvadas ir tikslas
 
-Šis Įgyvendinimo Gidas (IG) nurodo, kaip nuosekliai atvaizduoti ir keistis kritiniais ne klinikiniais paciento duomenimis, susijusiais su gyvensena ir sveikatos elgsena, naudojant Fast Healthcare Interoperability Resources (FHIR) standartą. Tikslus šios informacijos fiksavimas ir dalijimasis yra gyvybiškai svarbus visapusiškai pacientų priežiūrai, rizikos stratifikacijai, lėtinių ligų valdymui ir visuomenės sveikatos iniciatyvoms.
+Šis diegimo vadovas apibrėžia, kaip nuosekliai atvaizduoti ir keistis struktūrizuotais klinikiniais duomenimis **Lietuvos širdies ir kraujagyslių ligų (ŠKL) prevencijos ir ankstyvos diagnostikos programoje**, naudojant **HL7® FHIR® R5** standartą.
 
-## Apimtis ir Pagrindiniai Stebėjimai
+Jis palaiko nacionalines **ESPBI** elektronines formas ir procesus: **paciento ŠKL rizikos vertinimo anketą** ir **ŠKL prevencijos priemonių planą** (įskaitant vėlesnį **pasiekimų vertinimą**). Vadovas leidžia:
 
-Šis gidas pateikia struktūrizuotus FHIR profilius ir gaires pagrindiniams gyvensenos veiksniams, įskaitant:
+* palyginamus, mašinai skaitomus **rizikos vertinimus** (pvz., SCORE2) ir **programos rizikos grupės** priskyrimą,
+* struktūrizuotą **ŠKL rizikai svarbių lėtinių ligų** ir **rizikos veiksnių** fiksavimą,
+* sąveiką pagrįstus **prevencijos planus** (tikslai, gyvensenos priemonės, vaistų kontekstas),
+* **ilgalaikį** duomenų mainą, kai pacientas keičia įstaigas ar vizitus.
 
-- **Tabako vartojimas**: Rūkymo statusas, poveikis ir metimo istorija.
-- **Alkoholio vartojimas**: Vartojimo įpročiai, patikros rezultatai (pvz., AUDIT) ir intervencijos istorija.
-- **Fizinis aktyvumas**: Mankštos dažnumas, trukmė ir intensyvumas (pvz., naudojant MET).
-- **Mitybos įpročiai**: Specifinių maistinių medžiagų suvartojimas (pvz., natrio, cukraus) ir bendrieji mitybos modeliai.
+Trumpas klinikinis kelias nuo pirminės apžiūros iki stebėsenos aprašytas puslapyje **[Darbo eiga](workflow.html)**.
 
-## Kodėl verta naudoti šį gidą?
+## Programos ir verslo suinteresuotosioms šalims
 
-Priimdami šiuos profilius, diegėjai gali užtikrinti standartizuotą požiūrį į:
+Standartizuoti FHIR resursai leidžia **vienodą ataskaitų teikimą** programos administratoriams, **koordinuoti** pirminę priežiūrą ir specialistus bei **suderinti** duomenis su nacionalinėmis anketomis ir prevencijos plano rinkiniais. Diegėjai gali tikrinti duomenis pagal paskelbtus profilius ir reikšmių rinkinius, sumažindami neaiškumą integracijose ir registruose.
 
-Sąveika: Palengvinti vientisą, semantinį gyvensenos duomenų mainus tarp Elektroninių sveikatos įrašų (ESI) sistemų, pacientų portalų, tyrimų sistemų ir visuomenės sveikatos registrų.
+## Gydytojams
 
-Duomenų kokybė: Pagerinti užfiksuotų stebėjimų nuoseklumą, išsamumą ir klinikinę naudą per privalomus reikšmių rinkinius (ValueSets) ir duomenų tipus.
+Profiliai palaiko **struktūrizuotą dokumentavimą**: širdies ir kraujagyslių riziką (skaitinį įvertinimą ir kategoriją), **širdies ir kraujagyslių ligų rizikos grupę** programai, **komorbidiškumą**, **keičiamus ir nekeičiamus rizikos veiksnius**, **EKG**, kai naudojama vertinime, ir **individualizuotus prevencijos planus** (pvz., MTL ir arterinio kraujospūdžio tikslai, metimas rūkyti, mityba, fizinis aktyvumas, svoris, paskirtų vaistų kontekstas). Duomenis galima **pakartotinai naudoti** pakartotinių vizitų metu pasiekimams įvertinti.
 
-Klinikinė nauda: Palaikyti klinikinio sprendimo palaikymo, kokybės rodiklių ataskaitų teikimo ir gyventojų sveikatos valdymo pastangas, kurios remiasi tiksliu elgsenos ir biometriniu kontekstu.
+## Šio vadovo apimtis (profiliai)
 
-Naršykite toliau pateiktas skiltis, kad pasiektumėte profilius, terminologijos susiejimus ir išsamius pavyzdžius, reikalingus standartui įdiegti.
----
+Šis IG apibrėžia šiuos artefaktus. Kiekvienas pavadinimas veda į apibrėžimą šiame leidinyje.
 
-## IP teiginiai
+| Programos formų poreikis | Profilis / plėtinys |
+| ------------------------ | ------------------- |
+| SCORE2 tipo ŠKL rizika (%) ir kokybinė rizikos pakopa | [CVDRiskAssessmentLtCvd](StructureDefinition-cvd-risk-assessment-lt-cvd.html) |
+| Programos rizikos grupė širdies ir kraujagyslių ligoms | [RiskGroupObservationLtCvd](StructureDefinition-risk-group-observation-lt-cvd.html) |
+| Rizikos grupė priežiūros plane (plėtinys) | [RiskGroupExtLtCvd](StructureDefinition-risk-group-ext-lt-cvd.html) |
+| Lydinčios lėtinės ligos (ŠKL programos sąrašas) | [CvdChronicConditionLtCvd](StructureDefinition-cvd-chronic-condition-lt-cvd.html) |
+| Rizikos veiksniai (struktūrizuota būsena / skaičius) | [RiskFactorStatusLtCvd](StructureDefinition-risk-factor-status-lt-cvd.html) |
+| ŠKL prevencijos ir atrankos priežiūros planas | [CarePlanLtCvd](StructureDefinition-care-plan-lt-cvd.html) |
+| EKG radinys vertinimo kontekste | [EKGLtCvd](StructureDefinition-ekg-lt-cvd.html) |
+
+**Terminologiją** (reikšmių rinkinius ir kodų sistemas) skelbia šis vadovas ir **tx.hl7.lt**; visą sąrašą žr. Artifacts.
+
+## Ryšys su kitais Lietuvos IG
+
+Demografija, specialistas, organizacija ir vizitas dažniausiai naudoja **LT bazės** profilius. **Gyvybiniai rodikliai** (kraujospūdis, svoris, ūgis, KMI), **laboratoriniai rezultatai** (lipidai, gliukozė, HbA1c) ir **gyvensenos stebėjimai** (rūkymas, alkoholis, fizinis aktyvumas, mityba) modeliuojami **LT gyvybiniai rodikliai**, **LT laboratorija** ir **LT gyvensena**. Šis ŠKL IG sutelktas į **programai specifinę** rizikos stratifikaciją, ligas, rizikos veiksnius, planus ir EKG — ne į tų bazinių matavimų perkėlimą.
+
+## Kodėl verta naudoti šį vadovą?
+
+1. **Sąveika:** Vienodos semantikos anketos ir prevencijos plano duomenims visose ESI ir nacionalinėse sistemose.
+2. **Duomenų kokybė:** Privalomi susiejimai ir profiliai gerina programos duomenų išsamumą ir palyginamumą.
+3. **Klinikinė nauda:** Palaiko sprendimų paramą, priminimus pagal rizikos grupę ir struktūrizuotą pasiekimų vertinimą.
+
+Žr. **[Darbo eiga](workflow.html)** dėl proceso nuo pradžios iki pabaigos. **Artifacts** — visi profiliai, plėtiniai, terminologija ir pavyzdžiai.
+
+### IP teiginiai
 <!-- { // dar nepalaiko i18n IG leidėjuje: % include ip-statements.xhtml %} -->
 
-## Prisidėjusieji
+### Prisidėjusieji
 
 | Vardas | Pareigos | Organizacija |
 | ------------------------------------------------------------ | --------------------------------------------- | ---------------------------------------------------- |
 | [Igor Bossenko](https://about.askigor.eu)     | Pagrindinis autorius                | [HELEX](https://helex.health) |
 | [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Bendraautoris                 | [HELEX](https://helex.health)               |
-| Martynas Bieliauskas                           | Reviewer                 | [LMB](https://lmb.lt)               |
+| Martynas Bieliauskas                           | Recenzentas                      | [LMB](https://lmb.lt)               |

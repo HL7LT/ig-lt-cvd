@@ -23,7 +23,9 @@ publisher:
 # don't change the order of dependencies!
 dependencies:
   lt.hl7.fhir.base: 0.3.0
-  lt.hl7.fhir.lifestyle: dev
+  lt.hl7.fhir.lifestyle: current
+  lt.hl7.fhir.lab: current
+  lt.hl7.fhir.vitalsigns: current
   lt.hl7.fhir.eu: 0.0.2
   hl7.fhir.eu.base-r5: 0.1.0
 
@@ -58,6 +60,11 @@ dependencies:
 # For parameters defined by the FHIR Tools IG see:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 
+pages:
+  index.md:
+    title: Home
+  workflow.md:
+    title: Workflow
 
 parameters:
   special-url-base: https://hl7.lt/fhir
@@ -105,6 +112,7 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Workflow: workflow.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
