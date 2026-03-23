@@ -56,6 +56,8 @@ Demografija, specialistas, organizacija ir vizitas dažniausiai naudoja **LT baz
 
 | Vardas | Pareigos | Organizacija |
 | ------------------------------------------------------------ | --------------------------------------------- | ---------------------------------------------------- |
-| [Igor Bossenko](https://about.askigor.eu)     | Pagrindinis autorius                | [HELEX](https://helex.health) |
-| [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Bendraautoris                 | [HELEX](https://helex.health)               |
-| Martynas Bieliauskas                           | Recenzentas                      | [LMB](https://lmb.lt)               |
+| [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Co-Author                 | [HELEX Solutions](https://helex.solutions)               |
+| [Igor Bossenko](https://about.askigor.eu)     | Co-Author                | [HELEX Solutions](https://helex.solutions) |
+| Martynas Bieliauskas                           | Co-Author                      | [LMB](https://lmb.lt)               |
+| Audra Stepanauskaite                          | Co-Author                      | [LMB](https://lmb.lt)               |
+| Albert Kušlevič                           | Co-Author                      | [LMB](https://lmb.lt)               |

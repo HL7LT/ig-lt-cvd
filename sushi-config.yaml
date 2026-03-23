@@ -22,7 +22,7 @@ publisher:
 
 # don't change the order of dependencies!
 dependencies:
-  lt.hl7.fhir.base: 0.3.0
+  lt.hl7.fhir.base: current
   lt.hl7.fhir.lifestyle: current
   lt.hl7.fhir.lab: current
   lt.hl7.fhir.vitalsigns: current
