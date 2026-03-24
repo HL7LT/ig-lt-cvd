@@ -26,7 +26,3 @@ Raw **vital signs** and **lifestyle** data are usually profiled in **LT VitalSig
 * Alcohol — [Observation: Alcohol Consumption – No (example)](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-alcohol-consumption-no-example.html)
 
 Laboratory results (lipids, glucose, creatinine, etc.) are typically expressed with **LT Lab** observation profiles; link those resources from the **assessment** section when building a full programme record.
-
-## Relation to questionnaires
-
-National **electronic forms** can also be captured as **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — see **[Questionnaires](cvd-questionnaire.html)**. That path is **orthogonal** to the report/composition bundle: implementers may store form answers in QuestionnaireResponse, derive Observations, or use both.

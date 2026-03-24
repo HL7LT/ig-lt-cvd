@@ -19,16 +19,19 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[0].item[0].linkId = "plan-created-datetime"
 * item[0].item[0].text = "Plan creation date and time"
 * item[0].item[0].type = #dateTime
+* item[0].item[0].definition = $care-plan-lt-cvd-url
 * item[0].item[0].required = true
 * item[0].item[1].linkId = "plan-risk-group"
 * item[0].item[1].text = "Risk group for heart and vascular diseases (plan)"
 * item[0].item[1].type = #coding
+* item[0].item[1].definition = $risk-group-ext-lt-cvd-url
 * item[0].item[1].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#cvd-rg-large "Large"
 * item[0].item[1].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#cvd-rg-very-large "Very large"
 * item[0].item[1].required = true
 * item[0].item[2].linkId = "plan-target-ldl"
 * item[0].item[2].text = "Target LDL cholesterol considering risk group"
 * item[0].item[2].type = #coding
+* item[0].item[2].definition = $care-plan-lt-cvd-url
 * item[0].item[2].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#ldl-target-26 "<2.6 mmol/l"
 * item[0].item[2].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#ldl-target-18 "<1.8 mmol/l"
 * item[0].item[2].answerOption[2].valueCoding = $cvd-questionnaire-options-cs#ldl-target-14 "<1.4 mmol/l"
@@ -36,6 +39,7 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[0].item[3].linkId = "plan-smoking-cessation"
 * item[0].item[3].text = "Quitting smoking (interventions)"
 * item[0].item[3].type = #coding
+* item[0].item[3].definition = $care-plan-lt-cvd-url
 * item[0].item[3].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#cessation-pharmacological "Pharmacological"
 * item[0].item[3].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#cessation-behavior "Behavior change tools"
 * item[0].item[3].repeats = true
@@ -46,11 +50,13 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[1].item[0].linkId = "plan-physical-activity"
 * item[1].item[0].text = "Physical activity plan"
 * item[1].item[0].type = #coding
+* item[1].item[0].definition = $sd-lifestyle-physical-activity
 * item[1].item[0].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#pa-moderate-daily "30-60 minutes moderate activity daily"
 * item[1].item[0].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#pa-other "Other"
 * item[1].item[1].linkId = "plan-target-bmi"
-* item[1].item[1].text = "Target BMI (kg/m2)"
+* item[1].item[1].text = "Target BMI (kg/m²)"
 * item[1].item[1].type = #decimal
+* item[1].item[1].definition = $sd-vitalsigns-bmi
 * item[1].item[1].required = true
 
 * item[2].linkId = "grp-achievement"
@@ -59,24 +65,35 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[2].item[0].linkId = "achievement-datetime"
 * item[2].item[0].text = "Achievement evaluation date and time"
 * item[2].item[0].type = #dateTime
+* item[2].item[0].definition = $sd-base-observation-lt
 * item[2].item[1].linkId = "achievement-ldl-mmol"
 * item[2].item[1].text = "Achieved LDL cholesterol (mmol/l)"
 * item[2].item[1].type = #decimal
+* item[2].item[1].definition = $sd-lab-ldl
 * item[2].item[2].linkId = "achievement-ldl-target-met"
 * item[2].item[2].text = "Has the target LDL cholesterol been achieved?"
 * item[2].item[2].type = #boolean
+* item[2].item[2].definition = $care-plan-lt-cvd-url
 * item[2].item[3].linkId = "achievement-bp-systolic"
 * item[2].item[3].text = "Current systolic blood pressure (mmHg)"
 * item[2].item[3].type = #decimal
+* item[2].item[3].definition = $sd-vitalsigns-bp-panel
 * item[2].item[4].linkId = "achievement-bp-diastolic"
 * item[2].item[4].text = "Current diastolic blood pressure (mmHg)"
 * item[2].item[4].type = #decimal
+* item[2].item[4].definition = $sd-vitalsigns-bp-panel
 * item[2].item[5].linkId = "achievement-bp-target-met"
 * item[2].item[5].text = "Has the target BP been achieved?"
 * item[2].item[5].type = #boolean
-* item[2].item[6].linkId = "achievement-comments"
-* item[2].item[6].text = "Comments from the achievement evaluator"
-* item[2].item[6].type = #text
+* item[2].item[5].definition = $care-plan-lt-cvd-url
+* item[2].item[6].linkId = "achievement-smoking-quit"
+* item[2].item[6].text = "Smoking cessation achieved (at follow-up)"
+* item[2].item[6].type = #boolean
+* item[2].item[6].definition = $sd-lifestyle-tobacco-use
+* item[2].item[7].linkId = "achievement-comments"
+* item[2].item[7].text = "Comments from the achievement evaluator"
+* item[2].item[7].type = #text
+* item[2].item[7].definition = $sd-base-observation-lt
 
 Instance: questionnaireresponse-cvd-prevention-plan-example
 InstanceOf: QuestionnaireResponse
@@ -118,5 +135,7 @@ Description: "Example answers for the prevention plan Questionnaire including a 
 * item[2].item[4].answer.valueDecimal = 78
 * item[2].item[5].linkId = "achievement-bp-target-met"
 * item[2].item[5].answer.valueBoolean = true
-* item[2].item[6].linkId = "achievement-comments"
-* item[2].item[6].answer.valueString = "Patient adheres to statin therapy; BP self-monitoring stable."
+* item[2].item[6].linkId = "achievement-smoking-quit"
+* item[2].item[6].answer.valueBoolean = true
+* item[2].item[7].linkId = "achievement-comments"
+* item[2].item[7].answer.valueString = "Patient adheres to statin therapy; BP self-monitoring stable."

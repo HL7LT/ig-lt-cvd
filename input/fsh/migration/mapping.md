@@ -1,5 +1,7 @@
 # CVD attachments vs ig-lt-cvd examples — mapping
 
+**Questionnaire ↔ profile mapping:** see the IG page **Questionnaire mapping** (`questionnaire-mapping.md` / `questionnaire-mapping.html`) and the ConceptMaps `cvd-risk-assessment-questionnaire` and `cvd-prevention-plan-questionnaire`.
+
 Comparison of **attachment expectations** (Word: CVD questionnaire + prevention plan + achievement; Excel: Core Entities, Clinical Measurement Details, Relationships) to **examples in ig-lt-cvd**, with analogues in **ig-lt-base**, **ig-lt-vitalsigns**, **ig-lt-lifestyle**, **ig-lt-lab**.
 
 ## Summary

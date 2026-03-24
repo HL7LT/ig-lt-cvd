@@ -70,6 +70,7 @@ pages:
   cvd-questionnaire.md:
     title: Questionnaires
 
+
 parameters:
   special-url-base: https://hl7.lt/fhir
   special-url:
@@ -90,6 +91,11 @@ parameters:
     - https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment
     - https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan
     - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options
+    - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-risk-assessment-item
+    - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-prevention-plan-item
+    - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target
+    - https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire
+    - https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire
 
   excludettl: true
   shownav: true
