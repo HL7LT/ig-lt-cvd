@@ -56,6 +56,16 @@ CVD prevention is **longitudinal**. At follow-up visits (possibly at another ins
 * New **Observations** (vitals, labs) and updated **CarePlan** or **Goal**-related documentation represent this phase; the **same profile set** applies to **new instances over time**, not a separate “achievement” resource type.
 * Programme indicators (e.g. participation in healthy lifestyle training) may appear as additional observations or questionnaire fields as national forms specify.
 
+## Programme document bundle (CVD report + composition)
+
+For a **single exchangeable record** that mirrors **pathology** and **imaging** reporting patterns in other Lithuanian IGs, this guide defines **[CvdReportLtCvd](StructureDefinition-cvd-report-lt-cvd.html)** and **[CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html)**. The **DiagnosticReport** lists **Observation** results (SCORE2, risk group, EKG, follow-up LDL and BP); the **Composition** groups **assessment**, **prevention plan** (e.g. **CarePlan**), and **achievement evaluation** with **section narratives** and **entry** references. See **[CVD programme report](cvd-report.html)** for the full pattern and **[example instances](DiagnosticReport-diagnosticreport-cvd-example.html)**.
+
+**Illustrative examples** on the FHIR CI build for **vitals** and **lifestyle** data that feed assessment include: [blood pressure](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-blood-pressure-example.html), [body height](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-body-height-example.html), [tobacco use](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-tobacco-use-current-smoker-example.html), and [alcohol consumption](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-alcohol-consumption-no-example.html) (LT VitalSigns and LT Lifestyle).
+
+## ESPBI electronic forms (Questionnaire)
+
+The national **risk assessment** and **prevention / achievement** forms can be represented as **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — independent of the **CvdReport** bundle. Illustrative definitions and examples are on **[Questionnaires](cvd-questionnaire.html)**.
+
 ## Overview diagram
 
 ```mermaid

@@ -2,6 +2,8 @@
 // Profiles and extensions: StructureDefinition
 // Terminology: https://tx.hl7.lt/fhir/ (no -lt-cvd in path)
 
+Alias: $cvd-composition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd
+Alias: $cvd-report-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-report-lt-cvd
 Alias: $cvd-risk-assessment-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd
 Alias: $care-plan-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd
 Alias: $family-member-history-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/family-member-history-lt-cvd
@@ -16,6 +18,9 @@ Alias: $device-physical-activity-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureD
 
 // Extensions
 Alias: $risk-group-ext-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd
+
+// Illustrative codes for Questionnaire answer options (not a published CodeSystem resource in this IG)
+Alias: $cvd-questionnaire-options-cs = https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options
 
 // Terminology (tx.hl7.lt, no -lt-cvd in path per guide)
 Alias: $risk-group-lt-cvd-url = https://tx.hl7.lt/fhir/CodeSystem/risk-group

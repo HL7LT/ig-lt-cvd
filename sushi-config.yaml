@@ -65,6 +65,10 @@ pages:
     title: Home
   workflow.md:
     title: Workflow
+  cvd-report.md:
+    title: CVD Report
+  cvd-questionnaire.md:
+    title: Questionnaires
 
 parameters:
   special-url-base: https://hl7.lt/fhir
@@ -83,6 +87,9 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/screening-programme
     - https://tx.hl7.lt/fhir/ValueSet/severity
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
+    - https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment
+    - https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan
+    - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options
 
   excludettl: true
   shownav: true
@@ -112,7 +119,10 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Workflow: workflow.html
+  CVD:
+    Workflow: workflow.html
+    Report: cvd-report.html
+    Questionnaires: cvd-questionnaire.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
