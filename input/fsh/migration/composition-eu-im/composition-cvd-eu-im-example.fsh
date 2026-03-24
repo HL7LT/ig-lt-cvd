@@ -13,7 +13,7 @@ Title: "Composition: CVD Risk Assessment (EU IM style, cross-IG examples)"
 Description: "CVD questionnaire/plan narrative composition: local CVD profiles plus Base, VitalSigns, Lab, Lifestyle analogue examples per mapping.md."
 
 * status = #final
-* category = $loinc#11369-6 "History of clinical finding"
+* category = $loinc#11369-6 "History of Immunization note"
 * type = $loinc#83539-7 "Cardiology Risk assessment and screening note"
 * type.text = "ŠKL rizikos vertinimas"
 * date = 2024-10-27T20:40:40+02:00

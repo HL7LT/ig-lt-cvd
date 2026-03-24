@@ -5,7 +5,7 @@ Title: "Observation: Follow-up LDL cholesterol (example)"
 Description: "Example follow-up LDL measurement for achievement evaluation (CVD prevention programme)."
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $loinc#13457-7 "Cholesterol in LDL [Mass/volume] in Serum or Plasma"
+* code = $loinc#13457-7 "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation"
 * subject = Reference(patient-male-example)
 * effectiveDateTime = "2026-01-15T10:00:00Z"
 * valueQuantity.value = 2.4

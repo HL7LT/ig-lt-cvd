@@ -112,7 +112,7 @@ Title: "Observation: Physical activity (SKL01)"
 Description: "Fizinis aktyvumas. Migrated from DSTU1 cid:187."
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $sct#229065009 "Physical activity education (procedure)"
+* code = $sct#229065009 "Exercise therapy (regime/therapy)"
 * effectiveDateTime = 2014-10-28T08:01:00.000+02:00
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
@@ -124,7 +124,7 @@ Title: "Observation: Diet (SKL01)"
 Description: "Mityba. Migrated from DSTU1 cid:188."
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $sct#710818004 "Dietary regime management (procedure)"
+* code = $sct#410175003 "Dietary regime management (procedure)"
 * effectiveDateTime = 2014-10-28T08:01:00.000+02:00
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
@@ -137,6 +137,7 @@ Description: "Alkoholio vartojimas. Migrated from DSTU1 cid:189."
 * status = #final
 * category = $observation-category#exam "Exam"
 * code = $sct#228272002 "Alcohol consumption (observable entity)"
+// Siin vale snomed kood, kas sobiks 897148007 | Alcoholic beverage intake (observable entity) | ?
 * effectiveDateTime = 2014-10-28T08:01:00.000+02:00
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
