@@ -10,7 +10,7 @@ Usage: #example
 Title: "Composition: ŠKL Plan of care (SKL02)"
 Description: "ŠKL prevencijos priemonių planas. Migrated from DSTU1 SKL02."
 * status = #preliminary
-* category = $loinc#11369-6 "History of clinical finding"
+* category = $loinc#11369-6 "History of Immunization note"
 * type = $loinc#77442-2 "Cardiology Plan of care note"
 * type.text = "ŠKL prevencijos priemonių planas"
 * date = 2014-10-27T20:40:40+02:00

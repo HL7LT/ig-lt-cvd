@@ -51,7 +51,7 @@ Title: "Observation: CVD risk group (SKL01)"
 Description: "Širdies ir kraujagyslių ligų rizikos grupė – High. Migrated from DSTU1 cid:1104."
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $sct#827181004 "Risk of cardiovascular disease - Finding of risk level (finding)"
+* code = $sct#827181004 "Risk of cardiovascular disease (observable entity)"
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * valueCodeableConcept = $sct#75540009 "High (qualifier value)"
 * subject = Reference(patient-male-example)

@@ -52,7 +52,7 @@ Description: "Synoptic composition for the Lithuanian cardiovascular disease pre
 
 // Achievement evaluation — follow-up measurements and targets (PDF achievement section)
 * section[achievementEvaluation].title 1..1 MS
-* section[achievementEvaluation].code = $loinc#39221-7 "Follow-up note"
+* section[achievementEvaluation].code = $loinc#11506-3 "Progress note"
 * section[achievementEvaluation].text 1..1 MS
 * section[achievementEvaluation].text.status 1..1 MS
 * section[achievementEvaluation].text.div 1..1 MS

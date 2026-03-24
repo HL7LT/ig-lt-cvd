@@ -19,7 +19,7 @@ InstanceOf: List
 Usage: #example
 Title: "List: Medication dispensed (SKL01)"
 Description: "Prescription medications list. Migrated from DSTU1 cid:3disp."
-* code = $loinc#60590-7 "Medication dispensed brief Document"
+* code = $loinc#60590-7 "Medication dispensed.brief Document"
 * mode = #working
 * status = #current
 * subject = Reference(patient-male-example)
