@@ -42,10 +42,11 @@ This page lists all example instances in the Lithuanian CVD Implementation Guide
 
 | Instance | Profile | Description |
 |---|---|---|
-| [care-plan-cvd-screening-example](CarePlan-care-plan-cvd-screening-example.html) | CarePlanLtCvd | CVD prevention care plan with risk group extension, LDL/BP/BMI goal references, and lifestyle activities. |
-| [goal-ldl](Goal-goal-ldl.html) | Goal | Target LDL cholesterol goal: <1.8 mmol/l (very large risk group). |
-| [goal-bp](Goal-goal-bp.html) | Goal | Target blood pressure goal: 120–129/<80 mmHg. |
-| [goal-bmi](Goal-goal-bmi.html) | Goal | Target BMI goal: <25 kg/m². |
+| [care-plan-cvd-screening-example](CarePlan-care-plan-cvd-screening-example.html) | CarePlanLtCvd | CVD prevention care plan with risk group extension, LDL/BP/BMI contained goals, and lifestyle activities. |
+| [example-cvd-screening-plan-external](CarePlan-example-cvd-screening-plan-external.html) | CarePlan | Alternative CVD plan using external (non-contained) Goal references. |
+| [example-goal-ldl](Goal-example-goal-ldl.html) | Goal | Target LDL cholesterol goal: <1.8 mmol/l (very large risk group). |
+| [example-goal-bp](Goal-example-goal-bp.html) | Goal | Target blood pressure goal: 120–129/<80 mmHg. |
+| [example-goal-bmi](Goal-example-goal-bmi.html) | Goal | Target BMI goal: <25 kg/m². |
 
 #### Achievement Follow-up Observation Examples
 
