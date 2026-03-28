@@ -1,5 +1,5 @@
 ValueSet: RiskFactorTypeLtCvd
-Id: risk-factor-type-lt-cvd
+Id: risk-factor-type
 Title: "Risk Factor Type"
 Description: "SNOMED CT concepts representing screening-related risk factors."
 * ^url = $risk-factor-type-lt-cvd-url
@@ -14,3 +14,4 @@ Description: "SNOMED CT concepts representing screening-related risk factors."
 * $sct#73211009  "Diabetes mellitus (disorder)"
 * $sct#9414007   "Impaired glucose tolerance (disorder)"
 * $sct#390951007 "Impaired fasting glycemia (disorder)"
+* $sct#473145005 "Possible familial hypercholesterolemia (situation)"

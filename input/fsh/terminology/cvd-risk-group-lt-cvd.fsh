@@ -1,5 +1,5 @@
 ValueSet: CVDRiskGroupLtCvd
-Id: cvd-risk-group-lt-cvd
+Id: cvd-risk-group
 Title: "Cardiovascular Disease Risk Group"
 Description: "Defines the interpretation categories for cardiovascular disease risk assessment results, based on HL7 Observation Interpretation codes."
 * ^url = $cvd-risk-group-lt-cvd-url

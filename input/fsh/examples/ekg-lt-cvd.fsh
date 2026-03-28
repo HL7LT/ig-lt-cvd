@@ -1,6 +1,7 @@
 Instance: observation-ekg-normal-example
 InstanceOf: EKGLtCvd
 Title: "Observation: EKG Normal (example)"
+Description: "Example of a normal 12-lead EKG recording with sampled waveform data."
 Usage: #example
 * status = #final
 // * code.coding[mdc] = $EKG#131328 "MDC_ECG_ELEC_POTL"

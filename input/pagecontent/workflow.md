@@ -88,3 +88,39 @@ flowchart LR
 The loop from **FollowUp** back to **RiskStratification** reflects **reassessment** and plan updates over time.
 
 This workflow supports **standardised exchange** of questionnaire, plan, and follow-up data while keeping a clear separation between **raw measurements** (vitals, labs), **programme interpretation** (risk score, risk group), and **care planning** (this IG’s focus in steps 4–6).
+
+## DSTU1 to R5 migration notes
+
+The legacy ESPBI system uses three DSTU1 Atom feed documents (SKL01, SKL02, SKL03). This section documents structural changes for migration to FHIR R5.
+
+### Document types
+
+| DSTU1 Form | LOINC Code | R5 Profile |
+|---|---|---|
+| SKL01 — Risk Assessment Questionnaire | `83539-7` | [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) |
+| SKL02 — Prevention Plan | `77442-2` | [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) |
+| SKL03 — Achievement Evaluation | `78710-1` | [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) |
+
+The combined [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) (LOINC `51848-0`) can be used when all three sections are bundled into a single document.
+
+### Risk factor structure changes
+
+In DSTU1, each risk factor (hypertension, dyslipidemia, etc.) is represented as a **pair of Observations**:
+1. A main Observation using `method.coding` to identify the risk factor type (e.g., SNOMED `38341003` for hypertension) and `valueCodeableConcept` from `risk-probability` (certain/negligible) to indicate presence
+2. A related treatment status Observation (shared across risk factors via `<related>`) using SNOMED `1156601009` with treatment status as value
+
+In R5, each risk factor maps to a single [RiskFactorStatusLtCvd](StructureDefinition-risk-factor-status-lt-cvd.html) Observation with **components**:
+- `code` identifies the risk factor type (replaces DSTU1 `method`)
+- `component[risk]` carries the risk probability (replaces DSTU1 `valueCodeableConcept`)
+- `component[treatment]` carries treatment status (replaces DSTU1 related Observation)
+- `component[medication]` optionally identifies specific medication
+
+The DSTU1 pattern of sharing one treatment Observation across multiple risk factors is replaced by independent component values per risk factor.
+
+### Lifestyle risk factors
+
+DSTU1 encodes smoking, physical activity, nutrition, alcohol, and family history as generic risk factor Observations (code `80943009`) differentiated by `method.coding` (esveikata classifier). In R5, these map to **dedicated profiles** from the **LT Lifestyle IG** (e.g., TobaccoUseLtLifestyle, PhysicalActivityLtLifestyle, NutritionLtLifestyle).
+
+### SCORE2 code
+
+DSTU1 uses SNOMED `1371331009` (Systematic Coronary Risk Evaluation 2 score). The R5 CVDRiskAssessmentLtCvd profile uses SNOMED `827181004` (Risk of cardiovascular disease) as the observation code, with a component for risk degree.

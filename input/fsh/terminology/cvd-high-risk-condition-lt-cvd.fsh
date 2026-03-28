@@ -1,5 +1,5 @@
 ValueSet: CvdHighRiskConditionLtCvd
-Id: cvd-high-risk-condition-lt-cvd
+Id: cvd-high-risk-condition
 Title: "CVD High Risk Conditions"
 Description: "ICD-10 codes representing conditions that significantly increase cardiovascular disease risk, often used for risk stratification in Screening programs."
 * ^url = $cvd-high-risk-condition-lt-cvd-url

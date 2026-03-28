@@ -3,6 +3,9 @@
 // Terminology: https://tx.hl7.lt/fhir/ (no -lt-cvd in path)
 
 Alias: $cvd-composition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd
+Alias: $cvd-risk-assessment-composition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-composition-lt-cvd
+Alias: $cvd-prevention-plan-composition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-prevention-plan-composition-lt-cvd
+Alias: $cvd-achievement-composition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-achievement-composition-lt-cvd
 Alias: $cvd-report-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-report-lt-cvd
 Alias: $cvd-risk-assessment-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd
 Alias: $care-plan-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd
@@ -18,6 +21,17 @@ Alias: $device-physical-activity-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureD
 
 // Extensions
 Alias: $risk-group-ext-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd
+Alias: $medication-timing-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-timing-ext-lt-lifestyle
+Alias: $activity-other-description-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle
+Alias: $other-dietary-changes-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle
+
+// Terminology (tx.hl7.lt, no -lt-cvd in path per guide)
+Alias: $risk-group-lt-cvd-url = https://tx.hl7.lt/fhir/CodeSystem/risk-group
+Alias: $cvd-risk-degree-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-risk-degree
+Alias: $cvd-high-risk-condition-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-high-risk-condition
+Alias: $cvd-risk-group-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group
+Alias: $risk-factor-type-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/risk-factor-type
+Alias: $cvd-composition-code-vs-url = https://tx.hl7.lt/fhir/ValueSet/vd-composition-code
 
 // Illustrative codes for Questionnaire answer options (not a published CodeSystem resource in this IG)
 Alias: $cvd-questionnaire-options-cs = https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options
@@ -44,7 +58,14 @@ Alias: $sd-lab-glucose-venous = https://hl7.lt/fhir/lab/StructureDefinition/gluc
 Alias: $sd-lab-hba1c = https://hl7.lt/fhir/lab/StructureDefinition/hba1c-lab-lt
 Alias: $sd-lab-creatinine = https://hl7.lt/fhir/lab/StructureDefinition/creatinine-test-lab-lt
 Alias: $sd-lab-egfr = https://hl7.lt/fhir/lab/StructureDefinition/egfr-lab-lt
+Alias: $sd-lab-acr = https://hl7.lt/fhir/lab/StructureDefinition/acr-lab-lt
+Alias: $sd-lab-non-hdl = https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-non-hdl-lab-lt
 Alias: $sd-lifestyle-tobacco-use = https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-lt-lifestyle
+Alias: $sd-lifestyle-tobacco-use-duration = https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-duration-lt-lifestyle
+Alias: $sd-lifestyle-tobacco-type-used = https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-type-used-lt-lifestyle
+Alias: $sd-lifestyle-audit-c = https://hl7.lt/fhir/lifestyle/StructureDefinition/audit-c-lt-lifestyle
+Alias: $sd-lifestyle-family-history-diabetes = https://hl7.lt/fhir/lifestyle/StructureDefinition/family-history-diabetes-lt-lifestyle
+Alias: $sd-lifestyle-metabolic-syndrome = https://hl7.lt/fhir/lifestyle/StructureDefinition/metabolic-syndrome-lt-lifestyle
 Alias: $sd-lifestyle-physical-activity = https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-lt-lifestyle
 Alias: $sd-lifestyle-alcohol = https://hl7.lt/fhir/lifestyle/StructureDefinition/alcohol-consumption-lt-lifestyle
 Alias: $sd-lifestyle-nutrition = https://hl7.lt/fhir/lifestyle/StructureDefinition/nutrition-lt-lifestyle
@@ -58,13 +79,6 @@ Alias: $sd-vitalsigns-heart-rate = https://hl7.lt/fhir/vitalsigns/StructureDefin
 // FHIR R5 ConceptMap target relationship (http://hl7.org/fhir/concept-map-relationship)
 Alias: $cm-rel = http://hl7.org/fhir/concept-map-relationship
 
-// Terminology (tx.hl7.lt, no -lt-cvd in path per guide)
-Alias: $risk-group-lt-cvd-url = https://tx.hl7.lt/fhir/CodeSystem/risk-group
-Alias: $cvd-risk-degree-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-risk-degree
-Alias: $cvd-high-risk-condition-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-high-risk-condition
-Alias: $cvd-risk-group-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group
-Alias: $risk-factor-type-lt-cvd-url = https://tx.hl7.lt/fhir/ValueSet/risk-factor-type
-
 // Common terminology not defined in this IG
 Alias: $numeric-result-interpretation-lt-url = https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
 Alias: $yes-no-lt-url = https://tx.hl7.lt/fhir/ValueSet/yes-no
@@ -73,7 +87,4 @@ Alias: $screening-programme-lt-lifestyle-url = https://tx.hl7.lt/fhir/ValueSet/s
 Alias: $family-member-history-screening-lt-lifestyle-url = https://tx.hl7.lt/fhir/ValueSet/family-member-history-screening
 Alias: $treatment-status-lt-url = https://tx.hl7.lt/fhir/ValueSet/treatment-status
 
-Alias: $medication-timing-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-timing-ext-lt-lifestyle
-Alias: $activity-other-description-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle
-Alias: $other-dietary-changes-ext-lt-url = https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle
 Alias: $medication-taken-lt-url = https://tx.hl7.lt/fhir/ValueSet/medication-taken

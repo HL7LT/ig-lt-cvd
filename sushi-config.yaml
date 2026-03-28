@@ -96,6 +96,7 @@ parameters:
     - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target
     - https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire
     - https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire
+    - https://tx.hl7.lt/fhir/ValueSet/vd-composition-code
 
   excludettl: true
   shownav: true

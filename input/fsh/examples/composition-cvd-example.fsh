@@ -7,7 +7,7 @@ Description: "Synoptic CVD prevention document with assessment (risk and finding
 * identifier.system = "http://hospital.lt/sid/cvd-composition"
 * identifier.value = "cvd-comp-2025-001"
 * status = #final
-* type = $loinc#51847-2 "Evaluation + Plan note"
+* type = $loinc#51848-0 "Evaluation note"
 * category = $loinc#11488-4 "Consult note"
 * subject = Reference(Patient/patient-male-example)
 * date = "2025-10-01T14:30:00+03:00"

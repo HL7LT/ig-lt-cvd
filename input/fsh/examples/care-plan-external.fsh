@@ -1,7 +1,7 @@
 Instance: example-cvd-screening-plan-external
 InstanceOf: CarePlan
 Usage: #example
-Title: "Example of Cardiovascular Disease Screening Plan using external goals"
+Title: "CarePlan: CVD Screening with External Goals (example)"
 Description: "CVD screening plan for a patient at high cardiovascular risk, where goals are separate Goal resources referenced by the CarePlan."
 * status = #active
 * intent = #plan
@@ -28,7 +28,7 @@ Description: "CVD screening plan for a patient at high cardiovascular risk, wher
 Instance: example-goal-ldl
 InstanceOf: Goal
 Usage: #example
-Title: "Goal - LDL Cholesterol"
+Title: "Goal: LDL Cholesterol (example)"
 Description: "Target LDL Cholesterol < 1.8 mmol/L."
 * lifecycleStatus = #active
 * description.text = "Target LDL Cholesterol < 1.8 mmol/L."
@@ -43,7 +43,7 @@ Description: "Target LDL Cholesterol < 1.8 mmol/L."
 Instance: example-goal-bmi
 InstanceOf: Goal
 Usage: #example
-Title: "Goal - Body Mass Index"
+Title: "Goal: Body Mass Index (example)"
 Description: "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9)."
 * lifecycleStatus = #active
 * description.text = "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9)."
@@ -57,7 +57,7 @@ Description: "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9)."
 Instance: example-goal-bp
 InstanceOf: Goal
 Usage: #example
-Title: "Goal - Blood Pressure"
+Title: "Goal: Blood Pressure (example)"
 Description: "Target BP 120–129/<80 mmHg."
 * lifecycleStatus = #active
 * description.text = "Target BP 120–129/<80 mmHg."

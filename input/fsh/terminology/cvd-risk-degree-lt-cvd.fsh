@@ -1,5 +1,5 @@
 ValueSet: CVDRiskDegreeLtCvd
-Id: cvd-risk-degree-lt-cvd
+Id: cvd-risk-degree
 Title: "Cardiovascular Disease Risk Degree (SCORE2)"
 Description: """
 Degree of cardiovascular disease risk according to SCORE2 risk estimation table.

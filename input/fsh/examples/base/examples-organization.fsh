@@ -1,5 +1,6 @@
 Instance: organization-example
 InstanceOf: OrganizationLt
+Title: "Organization: Vilniaus miesto ligoninė (example)"
 Description: "Example of a healthcare organization"
 Usage: #example
 * language = #lt

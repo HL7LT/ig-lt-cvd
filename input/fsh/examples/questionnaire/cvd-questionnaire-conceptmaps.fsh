@@ -6,7 +6,24 @@ Instance: conceptmap-cvd-risk-assessment-questionnaire
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "CVD risk assessment Questionnaire item → profile mapping"
-Description: "Maps ESPBI form 1 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. Human-readable narrative is in each target.comment; Questionnaire.item.definition repeats canonical StructureDefinition URIs where applicable. Source: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target)."
+Description: """
+Maps ESPBI form 1 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. 
+Human-readable narrative is in each target.comment; Questionnaire.item.definition repeats canonical StructureDefinition URIs where applicable. 
+Source: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target).
+
+Aligned with DSTU1 data structures.
+
+In DSTU1, the CarePlan used inline `<goal>` elements with extensions for target values and
+`<activity>` elements for lifestyle interventions. In R5:
+
+- **Goals** are referenced via `CarePlan.goal` pointing to standalone `Goal` resources
+  (or contained inline). Goal types: LDL target, BP target, BMI target, weight loss ≥5%.
+- **Activities** use `CarePlan.activity.plannedActivityReference` for structured references
+  or `CarePlan.activity.performedActivity` for completed activities.
+- **Risk group** moved from DSTU1 inline Observation to an extension on CarePlan.
+- **Informational text** (healthy nutrition, healthy weight, regular medication) is carried
+  in `CarePlan.note` or `CarePlan.supportingInfo.display`.
+"""
 * url = $conceptmap-cvd-risk-assessment-questionnaire-url
 * version = "0.1.0"
 * name = "CvdRiskAssessmentQuestionnaireItemMap"

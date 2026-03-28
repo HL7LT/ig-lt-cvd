@@ -36,13 +36,17 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[0].item[2].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#ldl-target-18 "<1.8 mmol/l"
 * item[0].item[2].answerOption[2].valueCoding = $cvd-questionnaire-options-cs#ldl-target-14 "<1.4 mmol/l"
 * item[0].item[2].required = true
-* item[0].item[3].linkId = "plan-smoking-cessation"
-* item[0].item[3].text = "Quitting smoking (interventions)"
-* item[0].item[3].type = #coding
+* item[0].item[3].linkId = "plan-target-bp"
+* item[0].item[3].text = "Target blood pressure: 120-129/<80 mmHg"
+* item[0].item[3].type = #display
 * item[0].item[3].definition = $care-plan-lt-cvd-url
-* item[0].item[3].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#cessation-pharmacological "Pharmacological"
-* item[0].item[3].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#cessation-behavior "Behavior change tools"
-* item[0].item[3].repeats = true
+* item[0].item[4].linkId = "plan-smoking-cessation"
+* item[0].item[4].text = "Quitting smoking (interventions)"
+* item[0].item[4].type = #coding
+* item[0].item[4].definition = $care-plan-lt-cvd-url
+* item[0].item[4].answerOption[0].valueCoding = $cvd-questionnaire-options-cs#cessation-pharmacological "Pharmacological"
+* item[0].item[4].answerOption[1].valueCoding = $cvd-questionnaire-options-cs#cessation-behavior "Behavior change tools"
+* item[0].item[4].repeats = true
 
 * item[1].linkId = "grp-plan-lifestyle"
 * item[1].text = "Lifestyle and weight"
@@ -90,10 +94,25 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[2].item[6].text = "Smoking cessation achieved (at follow-up)"
 * item[2].item[6].type = #boolean
 * item[2].item[6].definition = $sd-lifestyle-tobacco-use
-* item[2].item[7].linkId = "achievement-comments"
-* item[2].item[7].text = "Comments from the achievement evaluator"
-* item[2].item[7].type = #text
-* item[2].item[7].definition = $sd-base-observation-lt
+* item[2].item[7].linkId = "achievement-height-cm"
+* item[2].item[7].text = "Height (cm)"
+* item[2].item[7].type = #decimal
+* item[2].item[7].definition = $sd-vitalsigns-body-height
+* item[2].item[7].required = true
+* item[2].item[8].linkId = "achievement-weight-kg"
+* item[2].item[8].text = "Weight (kg)"
+* item[2].item[8].type = #decimal
+* item[2].item[8].definition = $sd-vitalsigns-body-weight
+* item[2].item[8].required = true
+* item[2].item[9].linkId = "achievement-bmi"
+* item[2].item[9].text = "Achieved BMI (kg/m², automatically calculated)"
+* item[2].item[9].type = #decimal
+* item[2].item[9].definition = $sd-vitalsigns-bmi
+* item[2].item[9].required = true
+* item[2].item[10].linkId = "achievement-comments"
+* item[2].item[10].text = "Comments from the achievement evaluator"
+* item[2].item[10].type = #text
+* item[2].item[10].definition = $sd-base-observation-lt
 
 Instance: questionnaireresponse-cvd-prevention-plan-example
 InstanceOf: QuestionnaireResponse
@@ -113,8 +132,9 @@ Description: "Example answers for the prevention plan Questionnaire including a 
 * item[0].item[1].answer.valueCoding = $cvd-questionnaire-options-cs#cvd-rg-very-large "Very large"
 * item[0].item[2].linkId = "plan-target-ldl"
 * item[0].item[2].answer.valueCoding = $cvd-questionnaire-options-cs#ldl-target-18 "<1.8 mmol/l"
-* item[0].item[3].linkId = "plan-smoking-cessation"
-* item[0].item[3].answer[0].valueCoding = $cvd-questionnaire-options-cs#cessation-behavior "Behavior change tools"
+* item[0].item[3].linkId = "plan-target-bp"
+* item[0].item[4].linkId = "plan-smoking-cessation"
+* item[0].item[4].answer[0].valueCoding = $cvd-questionnaire-options-cs#cessation-behavior "Behavior change tools"
 
 * item[1].linkId = "grp-plan-lifestyle"
 * item[1].item[0].linkId = "plan-physical-activity"
@@ -137,5 +157,11 @@ Description: "Example answers for the prevention plan Questionnaire including a 
 * item[2].item[5].answer.valueBoolean = true
 * item[2].item[6].linkId = "achievement-smoking-quit"
 * item[2].item[6].answer.valueBoolean = true
-* item[2].item[7].linkId = "achievement-comments"
-* item[2].item[7].answer.valueString = "Patient adheres to statin therapy; BP self-monitoring stable."
+* item[2].item[7].linkId = "achievement-height-cm"
+* item[2].item[7].answer.valueDecimal = 178
+* item[2].item[8].linkId = "achievement-weight-kg"
+* item[2].item[8].answer.valueDecimal = 85
+* item[2].item[9].linkId = "achievement-bmi"
+* item[2].item[9].answer.valueDecimal = 26.8
+* item[2].item[10].linkId = "achievement-comments"
+* item[2].item[10].answer.valueString = "Patient adheres to statin therapy; BP self-monitoring stable."

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sushi",
+      "runtimeExecutable": "sushi",
+      "runtimeArgs": ["."],
+      "port": 0
+    }
+  ]
+}
