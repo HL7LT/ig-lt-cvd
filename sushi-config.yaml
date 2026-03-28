@@ -67,7 +67,13 @@ pages:
     title: Workflow
   cvd-report.md:
     title: CVD Report
-  cvd-questionnaire.md:
+  profiles.md:
+    title: Profiles
+  terminology.md:
+    title: Terminology
+  examples.md:
+    title: Examples
+  questionnaires.md:
     title: Questionnaires
 
 
@@ -88,6 +94,7 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/screening-programme
     - https://tx.hl7.lt/fhir/ValueSet/severity
     - https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
+    - https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation
     - https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment
     - https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan
     - https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options
@@ -126,10 +133,12 @@ parameters:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  CVD:
-    Workflow: workflow.html
-    Report: cvd-report.html
-    Questionnaires: cvd-questionnaire.html
+  Workflow: workflow.html
+  CVD Report: cvd-report.html
+  Profiles: profiles.html
+  Terminology: terminology.html
+  Examples: examples.html
+  Questionnaires: questionnaires.html
   Artifacts: artifacts.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮

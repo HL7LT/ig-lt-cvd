@@ -5,7 +5,7 @@
 // =============================================================================
 
 Instance: skl02-composition-1
-InstanceOf: CompositionLt
+InstanceOf: CvdPreventionPlanCompositionLtCvd
 Usage: #example
 Title: "Composition: ŠKL Plan of care (SKL02)"
 Description: "ŠKL prevencijos priemonių planas. Migrated from DSTU1 SKL02."

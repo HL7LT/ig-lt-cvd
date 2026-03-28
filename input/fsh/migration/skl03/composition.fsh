@@ -5,7 +5,7 @@
 // =============================================================================
 
 Instance: skl03-composition-1
-InstanceOf: CompositionLt
+InstanceOf: CvdAchievementCompositionLtCvd
 Usage: #example
 Title: "Composition: ŠKL Progress note (SKL03)"
 Description: "ŠKL prevencijos priemonių plano pasiekimų vertinimas. Migrated from DSTU1 SKL03."

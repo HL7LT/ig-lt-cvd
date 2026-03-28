@@ -81,6 +81,7 @@ Alias: $cm-rel = http://hl7.org/fhir/concept-map-relationship
 
 // Common terminology not defined in this IG
 Alias: $numeric-result-interpretation-lt-url = https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation
+Alias: $ekg-result-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation
 Alias: $yes-no-lt-url = https://tx.hl7.lt/fhir/ValueSet/yes-no
 Alias: $screened-conditions-lt-lifestyle-url = https://tx.hl7.lt/fhir/ValueSet/screened-conditions
 Alias: $screening-programme-lt-lifestyle-url = https://tx.hl7.lt/fhir/ValueSet/screening-programme

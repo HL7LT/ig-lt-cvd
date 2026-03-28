@@ -62,6 +62,15 @@ Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures 
 * item[1].item[1].type = #decimal
 * item[1].item[1].definition = $sd-vitalsigns-bmi
 * item[1].item[1].required = true
+* item[1].item[2].linkId = "info-healthy-nutrition"
+* item[1].item[2].text = "Healthy nutrition — Mediterranean diet recommended; reduce salt (<5 g/day), saturated fats, and added sugar."
+* item[1].item[2].type = #display
+* item[1].item[3].linkId = "info-healthy-weight"
+* item[1].item[3].text = "Healthy weight — target BMI < 25 kg/m²; waist circumference men < 94 cm, women < 80 cm."
+* item[1].item[3].type = #display
+* item[1].item[4].linkId = "info-regular-medication"
+* item[1].item[4].text = "Regular medication — take all prescribed medications (statins, antihypertensives) regularly and as directed."
+* item[1].item[4].type = #display
 
 * item[2].linkId = "grp-achievement"
 * item[2].text = "Achievement evaluation"

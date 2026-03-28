@@ -13,8 +13,8 @@ Description: "Anchor resource for the Lithuanian CVD prevention programme docume
 * identifier 1..* MS
 * status 1..1 MS
 * category 1..1 MS
-* category = http://terminology.hl7.org/CodeSystem/v2-0074#LAB "Laboratory"
-* category ^short = "Diagnostic service section; LAB is used as a generic grouping for programme diagnostic reports (same pattern as other LT diagnostic report profiles)."
+* category = http://terminology.hl7.org/CodeSystem/v2-0074#CTG "Cardiology"
+* category ^short = "Diagnostic service section; CTG (Cardiology) reflects the cardiovascular nature of this screening programme report."
 * code 1..1 MS
 * code = $sct#827181004 "Risk of cardiovascular disease"
 * subject 1..1 MS

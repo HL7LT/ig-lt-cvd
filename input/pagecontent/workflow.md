@@ -64,18 +64,18 @@ For a **single exchangeable record** that mirrors **pathology** and **imaging** 
 
 ## ESPBI electronic forms (Questionnaire)
 
-The national **risk assessment** and **prevention / achievement** forms can be represented as **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — independent of the **CvdReport** bundle. Illustrative definitions and examples are on **[Questionnaires](cvd-questionnaire.html)**.
+The national **risk assessment** and **prevention / achievement** forms can be represented as **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — independent of the **CvdReport** bundle. Illustrative definitions and examples are on **[Questionnaires](questionnaires.html)**.
 
 ## Overview diagram
 
 ```mermaid
 flowchart LR
-  step1[PrimaryCareAssessment]
-  step2[DiagnosticTesting]
-  step3[SpecialistEval]
-  step4[RiskStratification]
-  step5[PreventionPlan]
-  step6[FollowUp]
+  step1["Primary Care Assessment"]
+  step2["Diagnostic Testing"]
+  step3["Specialist Evaluation"]
+  step4["Risk Stratification"]
+  step5["Prevention Plan"]
+  step6["Follow-Up"]
   step1 --> step2
   step2 --> step3
   step3 --> step4
@@ -121,6 +121,3 @@ The DSTU1 pattern of sharing one treatment Observation across multiple risk fact
 
 DSTU1 encodes smoking, physical activity, nutrition, alcohol, and family history as generic risk factor Observations (code `80943009`) differentiated by `method.coding` (esveikata classifier). In R5, these map to **dedicated profiles** from the **LT Lifestyle IG** (e.g., TobaccoUseLtLifestyle, PhysicalActivityLtLifestyle, NutritionLtLifestyle).
 
-### SCORE2 code
-
-DSTU1 uses SNOMED `1371331009` (Systematic Coronary Risk Evaluation 2 score). The R5 CVDRiskAssessmentLtCvd profile uses SNOMED `827181004` (Risk of cardiovascular disease) as the observation code, with a component for risk degree.

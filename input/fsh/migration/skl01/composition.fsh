@@ -5,7 +5,7 @@
 // =============================================================================
 
 Instance: skl01-composition-1
-InstanceOf: CompositionLt
+InstanceOf: CvdRiskAssessmentCompositionLtCvd
 Usage: #example
 Title: "Composition: ŠKL Risk Assessment (SKL01)"
 Description: "ŠKL rizikos vertinimas. Migrated from DSTU1 SKL01."

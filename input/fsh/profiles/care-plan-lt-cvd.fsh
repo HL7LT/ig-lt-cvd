@@ -21,10 +21,24 @@ Captures prevention targets (LDL cholesterol, blood pressure, BMI), lifestyle in
 * created MS
 * custodian MS
 
-// Goals: LDL target, BP target, BMI target (at least LDL + BMI required per PDF)
+// Goals: LDL target, BP target, BMI target, weight-loss ≥5% (from DSTU1 SKL03)
 * goal MS
-* goal ^short = "Prevention targets (LDL, BP, BMI)"
-* goal ^definition = "References to Goal resources representing target LDL cholesterol, target blood pressure, target BMI, and optionally weight loss ≥5%."
+* goal ^slicing.discriminator.type = #value
+* goal ^slicing.discriminator.path = "display"
+* goal ^slicing.rules = #open
+* goal contains
+    ldlTarget 0..1 MS and
+    bpTarget 0..1 MS and
+    bmiTarget 0..1 MS and
+    weightLoss5pct 0..1 MS
+* goal[ldlTarget] ^short = "Target LDL cholesterol goal (<2.6 / <1.8 / <1.4 mmol/l by risk group)"
+* goal[ldlTarget] ^definition = "Reference to a Goal resource expressing the target LDL cholesterol level based on CVD risk group."
+* goal[bpTarget] ^short = "Target blood pressure goal (120–129/<80 mmHg)"
+* goal[bpTarget] ^definition = "Reference to a Goal resource for systolic/diastolic blood pressure target per programme protocol."
+* goal[bmiTarget] ^short = "Target BMI goal"
+* goal[bmiTarget] ^definition = "Reference to a Goal resource expressing the target body-mass index (BMI) value."
+* goal[weightLoss5pct] ^short = "Weight loss ≥5% of initial body weight goal"
+* goal[weightLoss5pct] ^definition = "Reference to a Goal resource representing weight reduction of ≥5% of initial body weight. Originates from the DSTU1 SKL03 achievement evaluation criteria."
 
 // Activities: smoking cessation, diet, physical activity
 * activity MS

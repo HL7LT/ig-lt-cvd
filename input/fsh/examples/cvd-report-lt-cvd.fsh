@@ -7,7 +7,7 @@ Description: "Example DiagnosticReport anchoring the CVD composition and listing
 * identifier.system = "http://hospital.lt/sid/cvd-diagnostic-report"
 * identifier.value = "cvd-dr-2025-001"
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/v2-0074#LAB "Laboratory"
+* category = http://terminology.hl7.org/CodeSystem/v2-0074#CTG "Cardiology"
 * code = $sct#827181004 "Risk of cardiovascular disease"
 * subject = Reference(Patient/patient-male-example)
 * effectiveDateTime = "2025-10-01T14:30:00+03:00"

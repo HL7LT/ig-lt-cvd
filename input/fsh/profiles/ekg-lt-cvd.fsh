@@ -31,4 +31,10 @@ Description: "Electrocardiogram (EKG/ECG) observation using 12 leads and Sampled
 * component.value[x] only SampledData
 * value[x] ..0
 * interpretation MS
-* interpretation from $numeric-result-interpretation-lt-url
+* interpretation ^slicing.discriminator.type = #value
+* interpretation ^slicing.discriminator.path = "coding.system"
+* interpretation ^slicing.rules = #open
+* interpretation contains ekgResult 0..1 MS
+* interpretation[ekgResult] from EkgResultInterpretationVS (required)
+* interpretation[ekgResult] ^short = "ECG result: Normal (SCT#164854000) or Abnormal (SCT#102594003)"
+* interpretation[ekgResult] ^definition = "Clinical interpretation of the ECG as normal or abnormal per SNOMED CT. Use #164854000 for a normal tracing, #102594003 for any abnormal finding."

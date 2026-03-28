@@ -1,7 +1,7 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "url" : "https://hl7.lt/fhir/lifestyle/Requirements/fromNarrative",
+  "url" : "http://hl7.eu/fhir/extensions/Requirements/fromNarrative",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",

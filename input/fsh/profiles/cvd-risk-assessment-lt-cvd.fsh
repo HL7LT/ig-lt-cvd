@@ -26,6 +26,6 @@ Description: "SCORE2 (Systematic Coronary Risk Estimation) cardiovascular diseas
 * component ^slicing.rules = #open
 * component contains cvdRiskDegree 1..1
 * component[cvdRiskDegree] ^short = "Qualitative SCORE2 risk category"
-* component[cvdRiskDegree].code = $sct#1281820001 "Finding of risk level (finding)"
+* component[cvdRiskDegree].code = $sct#11371331009 "Systematic Coronary Risk Evaluation 2 score"
 * component[cvdRiskDegree].value[x] only CodeableConcept
 * component[cvdRiskDegree].valueCodeableConcept from CVDRiskDegreeLtCvd (required)
