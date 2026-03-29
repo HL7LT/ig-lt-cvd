@@ -11,5 +11,5 @@ Description: "Care plan goals with achievement status. Migrated from DSTU1."
 * status = #active
 * intent = #plan
 * subject = Reference(patient-male-example)
-* contributor = Reference(practitioner-example)
+* contributor = Reference(practitioner-role-example)
 * note[0].text = "MTL Cholesterolis: achieved; Kraujo spaudimas: in progress; Metimas rūkyti: in progress; KMI: in progress; Svoris sumažėjo >= 5%: achieved"

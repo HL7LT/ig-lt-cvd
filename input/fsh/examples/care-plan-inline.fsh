@@ -7,10 +7,8 @@ Description: "CVD screening plan for a patient at high cardiovascular risk, incl
 * intent = #plan
 * created = 2025-10-31T10:00:00+02:00
 * subject = Reference(patient-male-example)
-* contributor[0] = Reference(practitioner-example)
-* contributor[0].display = "Registrar"
-* contributor[+] = Reference(organization-example)
-* contributor[=].display = "Vilnius Heart Clinic"
+* contributor[0] = Reference(practitioner-role-example)
+* contributor[0].display = "Dr. Petras Kazlauskas, Vilniaus miesto ligoninė"
 * supportingInfo[0].display = "Specialist's workstation: Cardiologist"
 * supportingInfo[+].reference = "Observation/observation-risk-group-high-example"
 * supportingInfo[=].display = "Cardiovascular disease risk assessment: 24% (High)"

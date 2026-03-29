@@ -1,5 +1,5 @@
 Profile: CarePlanLtCvd
-Parent: CarePlan
+Parent: CarePlanLt
 Id: care-plan-lt-cvd
 Title: "Care Plan: CVD prevention measures (LT)"
 Description: """
@@ -11,8 +11,8 @@ Captures prevention targets (LDL cholesterol, blood pressure, BMI), lifestyle in
 * ^status = #draft
 
 * extension contains RiskGroupExtLtCvd named riskGroup 0..1
-  and $activity-other-description-ext-lt-url named activityOtherDesc 0..1
-  and $other-dietary-changes-ext-lt-url named otherDietaryChanges 0..1
+  and $activity-other-description-ext-lt-lifestyle-url named activityOtherDesc 0..1
+  and $other-dietary-changes-ext-lt-lifestyle-url named otherDietaryChanges 0..1
 
 * status MS
 * intent MS

@@ -35,9 +35,9 @@ Captures both the assessed risk probability and the treatment status.
 * component[risk] ^short = "Assessed risk probability or certainty level."
 * component[treatment].code = $sct#443938003 "Procedure carried out on subject"
 * component[treatment].value[x] only CodeableConcept
-* component[treatment].valueCodeableConcept from $treatment-status-lt-url (extensible)
+* component[treatment].valueCodeableConcept from $treatment-status-url (extensible)
 * component[treatment] ^short = "Indicates whether treatment has been given or not."
 * component[medication].code = $sct#129019007 "Taking medication (observable entity)"
 * component[medication].value[x] only CodeableConcept
-* component[medication].valueCodeableConcept from $medication-taken-lt-url (extensible)
+* component[medication].valueCodeableConcept from $medication-taken-url (extensible)
 * component[medication] ^short = "Indicates whether medication has been taken or not."

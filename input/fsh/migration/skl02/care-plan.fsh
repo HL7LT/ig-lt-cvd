@@ -11,5 +11,5 @@ Description: "Plan of care with LDL, BP, smoking cessation, diet, physical activ
 * status = #active
 * intent = #plan
 * subject = Reference(patient-male-example)
-* contributor = Reference(practitioner-example)
+* contributor = Reference(practitioner-role-example)
 * note[0].text = "Tikslinis MTL Cholesterolis: 1.8 mmol/l; Tikslinis kraujo spaudimas: 120-129 mm[Hg]; Metimas rūkyti: Farmakologinės, Elgesio keitimo priemonės; Kita (mityba); Fizinis aktyvumas; Siektinas KMI: 23,0 kg/m2"
