@@ -1,5 +1,5 @@
 Instance: example-cvd-screening-plan-external
-InstanceOf: CarePlan
+InstanceOf: CarePlanLtCvd
 Usage: #example
 Title: "CarePlan: CVD Screening with External Goals (example)"
 Description: "CVD screening plan for a patient at high cardiovascular risk, where goals are separate Goal resources referenced by the CarePlan."

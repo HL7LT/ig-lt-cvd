@@ -1,5 +1,5 @@
 Instance: example-cvd-screening-plan
-InstanceOf: CarePlan
+InstanceOf: CarePlanLtCvd
 Usage: #example
 Title: "CarePlan: CVD Screening with Inline Goals (example)"
 Description: "CVD screening plan for a patient at high cardiovascular risk, including goals, risk group, lifestyle recommendations and medication instructions."
