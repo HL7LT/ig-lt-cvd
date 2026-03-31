@@ -19,6 +19,13 @@ Alias: $medication-statement-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefin
 // Alias: $number-of-steps-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/number-of-steps-lt-cvd
 Alias: $device-physical-activity-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/device-physical-activity-lt-cvd
 
+// Cardiovascular diagnostic assessment profiles
+Alias: $arterial-stiffness-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/arterial-stiffness-lt-cvd
+Alias: $echocardiography-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/echocardiography-lt-cvd
+Alias: $carotid-ultrasound-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/carotid-ultrasound-lt-cvd
+Alias: $ankle-brachial-index-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/ankle-brachial-index-lt-cvd
+Alias: $coronary-calcium-score-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/coronary-calcium-score-lt-cvd
+
 // Extensions
 Alias: $risk-group-ext-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd
 
@@ -45,4 +52,17 @@ Alias: $cm-rel = http://hl7.org/fhir/concept-map-relationship
 
 // CVD-specific terminology not defined in other IGs
 Alias: $ekg-result-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation
+
+// CVD diagnostic assessment terminology
+Alias: $arterial-stiffness-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/arterial-stiffness-interpretation
+Alias: $ejection-fraction-category-cs-url = https://tx.hl7.lt/fhir/CodeSystem/ejection-fraction-category
+Alias: $ejection-fraction-category-vs-url = https://tx.hl7.lt/fhir/ValueSet/ejection-fraction-category
+Alias: $carotid-component-cs-url = https://tx.hl7.lt/fhir/CodeSystem/carotid-component
+Alias: $carotid-plaque-category-cs-url = https://tx.hl7.lt/fhir/CodeSystem/carotid-plaque-category
+Alias: $carotid-plaque-category-vs-url = https://tx.hl7.lt/fhir/ValueSet/carotid-plaque-category
+Alias: $abi-component-cs-url = https://tx.hl7.lt/fhir/CodeSystem/abi-component
+Alias: $abi-interpretation-cs-url = https://tx.hl7.lt/fhir/CodeSystem/abi-interpretation
+Alias: $abi-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/abi-interpretation
+Alias: $coronary-calcium-interpretation-cs-url = https://tx.hl7.lt/fhir/CodeSystem/coronary-calcium-interpretation
+Alias: $coronary-calcium-interpretation-vs-url = https://tx.hl7.lt/fhir/ValueSet/coronary-calcium-interpretation
 Alias: $family-member-history-screening-lt-lifestyle-url = https://tx.hl7.lt/fhir/ValueSet/family-member-history-screening

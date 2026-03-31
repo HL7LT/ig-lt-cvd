@@ -34,7 +34,7 @@ Description: "Electrocardiogram (EKG/ECG) observation using 12 leads and Sampled
 * interpretation ^slicing.discriminator.type = #value
 * interpretation ^slicing.discriminator.path = "coding.system"
 * interpretation ^slicing.rules = #open
-* interpretation contains ekgResult 0..1 MS
+* interpretation contains ekgResult 0..* MS
 * interpretation[ekgResult] from EkgResultInterpretationVS (required)
-* interpretation[ekgResult] ^short = "ECG result: Normal (SCT#164854000) or Abnormal (SCT#102594003)"
-* interpretation[ekgResult] ^definition = "Clinical interpretation of the ECG as normal or abnormal per SNOMED CT. Use #164854000 for a normal tracing, #102594003 for any abnormal finding."
+* interpretation[ekgResult] ^short = "ECG findings: normal, abnormal, and/or specific findings (ST-T changes, A-fib, A-flutter, LBBB, etc.)"
+* interpretation[ekgResult] ^definition = "Clinical interpretation of the ECG. Multiple codes may be recorded: a high-level assessment (normal/abnormal) combined with specific finding codes (e.g., atrial fibrillation, ST-T changes). Use Observation.note for free-text 'Other' findings."

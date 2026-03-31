@@ -10,22 +10,31 @@ The pathway starts with a **primary care CVD assessment visit** (patient present
 
 * **Context:** Patient, practitioner, organisation, and encounter are typically represented with **LT Base** (and related) profiles.
 * **Measurements:** Blood pressure, weight, height, BMI, etc. use **LT VitalSigns** (and general Observation patterns) where profiled there.
+* **Central obesity** is assessed as a risk factor based on **waist circumference** (WaistCircumference from LT VitalSigns, thresholds: men >= 102 cm, women >= 88 cm) and recorded via **[RiskFactorStatusLtCvd](StructureDefinition-risk-factor-status-lt-cvd.html)** with SNOMED 248311001 (Central obesity).
 * **Lifestyle factors** (smoking, alcohol, activity, diet) often map to **LT Lifestyle** observations when captured in structured form.
 
 This step supplies the **inputs** for formal risk documentation in step 4.
 
 ## 2. Diagnostic testing (data acquisition)
 
-Based on the first assessment, **laboratory** tests (e.g. lipid profile, glucose or HbA1c, kidney function) and **functional or imaging** tests (e.g. echocardiography) may be performed. These produce **structured results** but are not, by themselves, programme “conclusions”—they feed **interpretation** and risk calculation.
+Based on the first assessment, **laboratory** tests and **functional or imaging** tests may be performed. These produce **structured results** but are not, by themselves, programme “conclusions”—they feed **interpretation** and risk calculation.
 
-* **Laboratory results** are usually **LT Lab** (or equivalent Observation) resources.
+* **Primary care laboratory tests** use **LT Lab** profiles: lipid panel ([TotalCholesterolLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-total-cholesterol-lab-lt.html), [CholesterolHdlLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-cholesterol-hdl-lab-lt.html), [CholesterolLdlLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-cholesterol-ldl-lab-lt.html), [TriglyceridesLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-triglycerides-lab-lt.html)), glucose ([GlucoseVenousLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-glucose-venous-lab-lt.html)), HbA1c ([HbA1cLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-hba1c-lab-lt.html)), creatinine, eGFR, and albumin/creatinine ratio.
+* **Cardiologist laboratory tests** (ordered at specialist evaluation) also use **LT Lab** profiles: [ApolipoproteinBLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-apolipoprotein-b-lab-lt.html) (Apo B), [LipoproteinALabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-lipoprotein-a-lab-lt.html) (Lp(a) — mass and molar methods), [PotassiumLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-potassium-lab-lt.html) (K+), [ASTLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-ast-lab-lt.html) (GOT), [ALTLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-alt-lab-lt.html) (GPT), and [HsCRPLabLt](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-hs-crp-lab-lt.html) (high-sensitivity CRP for CVD risk).
 * Results are referenced conceptually when building the **CVD risk assessment** and **risk group** in the next steps.
 
 ## 3. Specialist evaluation (if applicable)
 
-If indicated, the patient may attend **cardiology** or another specialist. The specialist reviews primary-care data and test results and may order **additional tests**.
+If indicated (e.g. high or very high SCORE2 risk), the patient may attend **cardiology** or another specialist. The specialist reviews primary-care data and test results and may order **additional diagnostic tests**, captured by this IG:
 
-This IG does not define a dedicated “referral” profile; **ServiceRequest** / **Encounter** patterns from Base or EU packages may apply. Outputs again feed **step 4**.
+* **[EKGLtCvd](StructureDefinition-ekg-lt-cvd.html)** — 12-lead ECG with SampledData waveform and detailed interpretation (normal, abnormal, ST-T changes, atrial fibrillation/flutter, LBBB, supraventricular arrhythmia, extrasystole). Free-text “Other” findings use `Observation.note`.
+* **[EchocardiographyLtCvd](StructureDefinition-echocardiography-lt-cvd.html)** — Heart ultrasound capturing ejection fraction (%), EF category (preserved >= 50%, mildly reduced 41-49%, reduced <= 40%), and optional pathology (ICD-10).
+* **[ArterialStiffnessLtCvd](StructureDefinition-arterial-stiffness-lt-cvd.html)** — Pulse wave velocity (PWV) carotid-femoral in m/s; normal < 10 m/s.
+* **[CarotidUltrasoundLtCvd](StructureDefinition-carotid-ultrasound-lt-cvd.html)** — Carotid artery ultrasound with right/left plaque categories (none, present, < 50%, 50-69%, > 70%) and intima-media thickness (IMT; pathological > 1.5 mm).
+* **[AnkleBrachialIndexLtCvd](StructureDefinition-ankle-brachial-index-lt-cvd.html)** — ABI for diabetic patients and smokers; right/left values with PAD severity (normal > 0.9, mild/moderate 0.41-0.90, severe <= 0.40).
+* **[CoronaryCalciumScoreLtCvd](StructureDefinition-coronary-calcium-score-lt-cvd.html)** — Agatston score with 6-level interpretation (0 through > 1000). Ordered when medication need is unclear or statins are not tolerated.
+
+This IG does not define a dedicated “referral” profile; **ServiceRequest** / **Encounter** patterns from Base or EU packages may apply. Outputs feed **step 4**.
 
 ## 4. Clinical interpretation and risk stratification
 
@@ -35,7 +44,8 @@ Available data are integrated into a coherent **CVD assessment** for the program
 * **[RiskGroupObservationLtCvd](StructureDefinition-risk-group-observation-lt-cvd.html)** — **programme risk group** for heart and vessel diseases (e.g. for recall and reporting), consistent with national criteria where automation or manual confirmation applies.
 * **[CvdChronicConditionLtCvd](StructureDefinition-cvd-chronic-condition-lt-cvd.html)** — **accompanying chronic diseases** relevant to CVD risk from the programme list.
 * **[RiskFactorStatusLtCvd](StructureDefinition-risk-factor-status-lt-cvd.html)** — **risk factors** (including total count where used).
-* **[EKGLtCvd](StructureDefinition-ekg-lt-cvd.html)** — **ECG** when captured as part of this assessment context.
+* **[EKGLtCvd](StructureDefinition-ekg-lt-cvd.html)** — **ECG** when captured as part of this assessment context (supports detailed findings: ST-T changes, arrhythmias, conduction disorders).
+* **Cardiovascular diagnostics** (when performed at specialist evaluation): [EchocardiographyLtCvd](StructureDefinition-echocardiography-lt-cvd.html), [ArterialStiffnessLtCvd](StructureDefinition-arterial-stiffness-lt-cvd.html), [CarotidUltrasoundLtCvd](StructureDefinition-carotid-ultrasound-lt-cvd.html), [AnkleBrachialIndexLtCvd](StructureDefinition-ankle-brachial-index-lt-cvd.html), [CoronaryCalciumScoreLtCvd](StructureDefinition-coronary-calcium-score-lt-cvd.html).
 
 Together, these correspond to the **questionnaire** sections for chronic diseases, risk factors, objective findings, ECG, and risk group, plus the numeric risk estimate.
 

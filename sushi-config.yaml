@@ -104,6 +104,17 @@ parameters:
     - https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire
     - https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire
     - https://tx.hl7.lt/fhir/ValueSet/vd-composition-code
+    - https://tx.hl7.lt/fhir/ValueSet/arterial-stiffness-interpretation
+    - https://tx.hl7.lt/fhir/CodeSystem/ejection-fraction-category
+    - https://tx.hl7.lt/fhir/ValueSet/ejection-fraction-category
+    - https://tx.hl7.lt/fhir/CodeSystem/carotid-component
+    - https://tx.hl7.lt/fhir/CodeSystem/carotid-plaque-category
+    - https://tx.hl7.lt/fhir/ValueSet/carotid-plaque-category
+    - https://tx.hl7.lt/fhir/CodeSystem/abi-component
+    - https://tx.hl7.lt/fhir/CodeSystem/abi-interpretation
+    - https://tx.hl7.lt/fhir/ValueSet/abi-interpretation
+    - https://tx.hl7.lt/fhir/CodeSystem/coronary-calcium-interpretation
+    - https://tx.hl7.lt/fhir/ValueSet/coronary-calcium-interpretation
 
   excludettl: true
   shownav: true

@@ -1,7 +1,11 @@
 ValueSet: RiskFactorTypeLtCvd
 Id: risk-factor-type
 Title: "Risk Factor Type"
-Description: "SNOMED CT concepts representing screening-related risk factors."
+Description: """
+SNOMED CT concepts representing screening-related risk factors within the Lithuanian CVD screening programme.
+Central obesity is assessed based on waist circumference (WaistCircumference profile from LT VitalSigns):
+men >= 102 cm, women >= 88 cm.
+"""
 * ^url = $risk-factor-type-lt-cvd-url
 * ^language = #en
 * ^version = "1.0.0"
@@ -15,3 +19,4 @@ Description: "SNOMED CT concepts representing screening-related risk factors."
 * $sct#9414007   "Impaired glucose tolerance (disorder)"
 * $sct#390951007 "Impaired fasting glycemia (disorder)"
 * $sct#473145005 "Possible familial hypercholesterolemia (situation)"
+* $sct#248311001 "Central obesity (finding)"
