@@ -56,6 +56,16 @@ Pacientams, priskirtiems tinkamai **rizikos grupei**, kuriamas **ŠKL prevencijo
 * Nauji **Observation** (gyvybiniai, laboratorija) ir atnaujintas **CarePlan** ar su tikslais susijęs dokumentavimas vaizduoja šią fazę; taikomas **tas pats profilių rinkinys** kaip **nauji egzemplioriai laike**, ne atskiras „pasiekimų“ resursų tipas.
 * Programos rodikliai (pvz., dalyvavimas sveikos gyvensenos mokymuose) gali būti papildomi stebėjimai ar laukai pagal nacionalines formas.
 
+## Programos dokumento rinkinys (ŠKL ataskaita + kompozicija)
+
+Vienam keičiamam įrašui, atspindinčiam **patologijos** ir **vaizdinės diagnostikos** ataskaitų šablonus kituose Lietuvos IG, šis vadovas apibrėžia **[CvdReportLtCvd](StructureDefinition-cvd-report-lt-cvd.html)** ir **[CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html)**. **DiagnosticReport** sąrašuoja **Observation** rezultatus (SCORE2, rizikos grupė, EKG, stebėsenos MTL ir AKS); **Composition** grupuoja **vertinimą**, **prevencijos planą** (pvz., **CarePlan**) ir **pasiekimų vertinimą** su **skyrių naratyvais** ir **entry** nuorodomis. Žr. **[ŠKL programos ataskaitą](cvd-report.html)** dėl viso šablono ir **[pavyzdinių egzempliorių](DiagnosticReport-diagnosticreport-cvd-example.html)**.
+
+**Iliustratyvūs pavyzdžiai** FHIR CI kūrinyje **gyvybiniams** ir **gyvensenos** duomenims, maitinusiems vertinimą: [arterinis kraujospūdis](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-blood-pressure-example.html), [kūno ūgis](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-body-height-example.html), [tabako vartojimas](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-tobacco-use-current-smoker-example.html) ir [alkoholio vartojimas](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-alcohol-consumption-no-example.html) (LT gyvybiniai rodikliai ir LT gyvensena).
+
+## ESPBI elektroninės formos (klausimynas)
+
+Nacionalinė **rizikos vertinimo** ir **prevencijos / pasiekimų** formos gali būti vaizduojamos kaip **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — nepriklausomai nuo **CvdReport** rinkinio. Iliustratyvūs apibrėžimai ir pavyzdžiai pateikti puslapyje **[Klausimynai](questionnaires.html)**.
+
 ## Apžvalgos schema
 
 ```mermaid
@@ -78,3 +88,35 @@ flowchart LR
 Kilpa iš **Stebėsena** atgal į **RizikosStratifikacija** atspindi **pakartotinį vertinimą** ir plano atnaujinimą.
 
 Ši darbo eiga palaiko **standartizuotus mainus** anketos, plano ir stebėsenos duomenimis, aiškiai atskirdama **grynuosius matavimus** (gyvybiniai, laboratorija), **programos interpretaciją** (rizikos įvertinimas, rizikos grupė) ir **priežiūros planavimą** (šio IG dėmesys 4–6 žingsniuose).
+
+## DSTU1 į R5 migracijos pastabos
+
+Senoji ESPBI sistema naudoja tris DSTU1 Atom kanalų dokumentus (SKL01, SKL02, SKL03). Šiame skyriuje dokumentuojami struktūriniai pokyčiai migracijai į FHIR R5.
+
+### Dokumentų tipai
+
+| DSTU1 forma | LOINC kodas | R5 profilis |
+|---|---|---|
+| SKL01 — Rizikos vertinimo anketa | `83539-7` | [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) |
+| SKL02 — Prevencijos planas | `77442-2` | [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) |
+| SKL03 — Pasiekimų vertinimas | `78710-1` | [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) |
+
+Kombinuotas [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) (LOINC `51848-0`) gali būti naudojamas, kai visi trys skyriai sujungti į vieną dokumentą.
+
+### Rizikos veiksnių struktūros pokyčiai
+
+DSTU1 kiekvienas rizikos veiksnys (hipertenzija, dislipidemija ir kt.) vaizduojamas kaip **Observation pora**:
+1. Pagrindinis Observation, naudojantis `method.coding` rizikos veiksnio tipui identifikuoti (pvz., SNOMED `38341003` hipertenzijoje) ir `valueCodeableConcept` iš `risk-probability` (tikras/nereikšmingas) buvimui nurodyti
+2. Susijęs gydymo būsenos Observation (bendras keliems rizikos veiksniams per `<related>`) naudojant SNOMED `1156601009` su gydymo būsena kaip reikšme
+
+R5 kiekvienas rizikos veiksnys žemėlapiamas į vieną [RiskFactorStatusLtCvd](StructureDefinition-risk-factor-status-lt-cvd.html) Observation su **komponentais**:
+- `code` identifikuoja rizikos veiksnio tipą (pakeičia DSTU1 `method`)
+- `component[risk]` neša rizikos tikimybę (pakeičia DSTU1 `valueCodeableConcept`)
+- `component[treatment]` neša gydymo būseną (pakeičia DSTU1 susijusį Observation)
+- `component[medication]` neprivaloma identifikuoja konkretų vaistą
+
+DSTU1 vieno gydymo Observation dalinimosi tarp kelių rizikos veiksnių modelis pakeičiamas nepriklausomomis komponento reikšmėmis kiekvienam rizikos veiksniui.
+
+### Gyvensenos rizikos veiksniai
+
+DSTU1 koduoja rūkymą, fizinį aktyvumą, mitybą, alkoholį ir šeiminę istoriją kaip bendrus rizikos veiksnių Observations (kodas `80943009`), išskiriant pagal `method.coding` (esveikata klasifikatorius). R5 jie žemėlapiami į **specialiai skirtus profilius** iš **LT gyvensenos IG** (pvz., TobaccoUseLtLifestyle, PhysicalActivityLtLifestyle, NutritionLtLifestyle).
