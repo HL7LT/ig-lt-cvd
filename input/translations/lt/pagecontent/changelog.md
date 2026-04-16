@@ -1,7 +1,7 @@
-### Kuriama
+### Rengiama
 
-Kanoniniai URL pakeisti į `https://hl7.lt/fhir/` atitikties resursams ir `https://tx.lmb.lt/fhir/` terminologijos resursams, siekiant pritaikyti būsimiems IG, kurie seks šablonu `https://hl7.lt/fhir/<ig>`.
+Kanoniniai URL adresai pakeisti į `https://hl7.lt/fhir/` atitikties ištekliams ir `https://tx.lmb.lt/fhir/` terminologijos ištekliams, numatant būsimus IG, kurie bus formuojami pagal šabloną `https://hl7.lt/fhir/<ig>`.
 
 ### Versija 0.1.0
 
-Pridėti lietuviški vertimai.
+Pridėti vertimai į lietuvių kalbą.
