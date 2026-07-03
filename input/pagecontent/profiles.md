@@ -7,10 +7,10 @@ This page lists all StructureDefinition profiles and extensions defined in the L
 | Profile | Description |
 |---|---|
 | [CvdReportLtCvd](StructureDefinition-cvd-report-lt-cvd.html) | DiagnosticReport anchor for the CVD programme document. Links a CvdComposition with all structured Observation results (SCORE2, risk group, ECG, follow-up). Modelled after the imaging-report pattern. |
-| [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) | Combined three-section composition for the full CVD prevention programme document (risk assessment + prevention plan + achievement evaluation). Use the document-specific profiles below for individual sections. |
-| [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) | Composition for the CVD risk assessment document (DSTU1 SKL01 equivalent). Fixed type: `LOINC#83539-7` Cardiology Risk assessment and screening note. |
-| [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) | Composition for the CVD prevention measures plan document (DSTU1 SKL02 equivalent). Fixed type: `LOINC#77442-2` Cardiology Plan of care note. |
-| [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) | Composition for the CVD achievement evaluation document (DSTU1 SKL03 equivalent). Fixed type: `LOINC#78710-1` Cardiology Progress note. |
+| [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) | Combined three-section composition for the full CVD prevention programme document (risk assessment + prevention plan + achievement evaluation), covering all three sections in a single profile. |
+| CvdRiskAssessmentCompositionLtCvd | Composition for the CVD risk assessment document (DSTU1 SKL01 equivalent). Fixed type: `LOINC#83539-7` Cardiology Risk assessment and screening note. |
+| CvdPreventionPlanCompositionLtCvd | Composition for the CVD prevention measures plan document (DSTU1 SKL02 equivalent). Fixed type: `LOINC#77442-2` Cardiology Plan of care note. |
+| CvdAchievementCompositionLtCvd | Composition for the CVD achievement evaluation document (DSTU1 SKL03 equivalent). Fixed type: `LOINC#78710-1` Cardiology Progress note. |
 
 #### Risk Assessment Profiles
 

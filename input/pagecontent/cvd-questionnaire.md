@@ -38,7 +38,7 @@ The example Questionnaires use short **`item.text`** labels, optional canonical 
 * [ConceptMap cvd-risk-assessment-questionnaire](ConceptMap-conceptmap-cvd-risk-assessment-questionnaire.html) — canonical URL `https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire`
 * [ConceptMap cvd-prevention-plan-questionnaire](ConceptMap-conceptmap-cvd-prevention-plan-questionnaire.html) — canonical URL `https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire`
 
-Full description of R5 ConceptMap FSH, **`related-to`**, and alignment with **`input/fsh/migration/mapping.md`**: [Questionnaire mapping](questionnaire-mapping.html).
+Full description of R5 ConceptMap FSH, **`related-to`**, and alignment with **`input/fsh/migration/mapping.md`**: [Questionnaire mapping](questionnaires.html).
 
 ## When to use QuestionnaireResponse vs Observations
 
