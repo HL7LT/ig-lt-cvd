@@ -23,7 +23,7 @@ Profile: CvdCompositionLtCvd
 Parent: CompositionLt
 Id: cvd-composition-lt-cvd
 Title: "Composition: CVD programme document (LT)"
-Description: "Combined composition for the Lithuanian CVD prevention programme containing all three sections. Use the specific profiles (CvdRiskAssessmentCompositionLtCvd, CvdPreventionPlanCompositionLtCvd, CvdAchievementCompositionLtCvd) when producing individual documents."
+Description: "Combined composition for the Lithuanian CVD prevention programme, containing all three sections (risk assessment, prevention plan, and achievement evaluation) in a single document."
 * ^url = $cvd-composition-lt-cvd-url
 * insert CvdCompositionBase
 * . ^short = "CVD prevention programme composition (combined)"
