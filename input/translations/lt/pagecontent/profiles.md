@@ -7,10 +7,10 @@
 | Profilis | Aprašas |
 |---|---|
 | [CvdReportLtCvd](StructureDefinition-cvd-report-lt-cvd.html) | DiagnosticReport inkaras ŠKL programos dokumentui. Susieja CvdComposition su visais struktūrizuotais Observation rezultatais (SCORE2, rizikos grupė, EKG, stebėsena). Modeliuota pagal vaizdinės diagnostikos ataskaitos šabloną. |
-| [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) | Kombinuota trijų skyrių kompozicija visam ŠKL prevencijos programos dokumentui (rizikos vertinimas + prevencijos planas + pasiekimų vertinimas). Individualių skyrių naudokite žemiau esančius dokumentams skirtus profilius. |
-| [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) | ŠKL rizikos vertinimo dokumento kompozicija (DSTU1 SKL01 atitikmuo). Fiksuotas tipas: `LOINC#83539-7` Kardiologinis rizikos vertinimo ir atrankos aprašas. |
-| [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) | ŠKL prevencijos priemonių plano dokumento kompozicija (DSTU1 SKL02 atitikmuo). Fiksuotas tipas: `LOINC#77442-2` Kardiologinis priežiūros plano aprašas. |
-| [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) | ŠKL pasiekimų vertinimo dokumento kompozicija (DSTU1 SKL03 atitikmuo). Fiksuotas tipas: `LOINC#78710-1` Kardiologinė pažangos pastaba. |
+| [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) | Kombinuota trijų skyrių kompozicija visam ŠKL prevencijos programos dokumentui (rizikos vertinimas + prevencijos planas + pasiekimų vertinimas), apimanti visus tris skyrius viename profilyje. |
+| CvdRiskAssessmentCompositionLtCvd | ŠKL rizikos vertinimo dokumento kompozicija (DSTU1 SKL01 atitikmuo). Fiksuotas tipas: `LOINC#83539-7` Kardiologinis rizikos vertinimo ir atrankos aprašas. |
+| CvdPreventionPlanCompositionLtCvd | ŠKL prevencijos priemonių plano dokumento kompozicija (DSTU1 SKL02 atitikmuo). Fiksuotas tipas: `LOINC#77442-2` Kardiologinis priežiūros plano aprašas. |
+| CvdAchievementCompositionLtCvd | ŠKL pasiekimų vertinimo dokumento kompozicija (DSTU1 SKL03 atitikmuo). Fiksuotas tipas: `LOINC#78710-1` Kardiologinė pažangos pastaba. |
 
 #### Rizikos vertinimo profiliai
 

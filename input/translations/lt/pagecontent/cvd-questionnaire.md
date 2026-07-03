@@ -38,7 +38,7 @@ Klausimynų pavyzdžiai naudoja trumpas **`item.text`** etiketes, neprivalomą k
 * [ConceptMap cvd-risk-assessment-questionnaire](ConceptMap-conceptmap-cvd-risk-assessment-questionnaire.html) — kanoninė URL `https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire`
 * [ConceptMap cvd-prevention-plan-questionnaire](ConceptMap-conceptmap-cvd-prevention-plan-questionnaire.html) — kanoninė URL `https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire`
 
-Pilnas R5 ConceptMap FSH, **`related-to`** ir suderinimo su **`input/fsh/migration/mapping.md`** aprašas: [Questionnaire mapping](questionnaire-mapping.html).
+Pilnas R5 ConceptMap FSH, **`related-to`** ir suderinimo su **`input/fsh/migration/mapping.md`** aprašas: [Questionnaire mapping](questionnaires.html).
 
 ## Kada naudoti QuestionnaireResponse vietoj Observations
 

@@ -97,9 +97,9 @@ Senoji ESPBI sistema naudoja tris DSTU1 Atom kanalų dokumentus (SKL01, SKL02, S
 
 | DSTU1 forma | LOINC kodas | R5 profilis |
 |---|---|---|
-| SKL01 — Rizikos vertinimo anketa | `83539-7` | [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) |
-| SKL02 — Prevencijos planas | `77442-2` | [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) |
-| SKL03 — Pasiekimų vertinimas | `78710-1` | [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) |
+| SKL01 — Rizikos vertinimo anketa | `83539-7` | CvdRiskAssessmentCompositionLtCvd |
+| SKL02 — Prevencijos planas | `77442-2` | CvdPreventionPlanCompositionLtCvd |
+| SKL03 — Pasiekimų vertinimas | `78710-1` | CvdAchievementCompositionLtCvd |
 
 Kombinuotas [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) (LOINC `51848-0`) gali būti naudojamas, kai visi trys skyriai sujungti į vieną dokumentą.
 

@@ -107,9 +107,9 @@ The legacy ESPBI system uses three DSTU1 Atom feed documents (SKL01, SKL02, SKL0
 
 | DSTU1 Form | LOINC Code | R5 Profile |
 |---|---|---|
-| SKL01 — Risk Assessment Questionnaire | `83539-7` | [CvdRiskAssessmentCompositionLtCvd](StructureDefinition-cvd-risk-assessment-composition-lt-cvd.html) |
-| SKL02 — Prevention Plan | `77442-2` | [CvdPreventionPlanCompositionLtCvd](StructureDefinition-cvd-prevention-plan-composition-lt-cvd.html) |
-| SKL03 — Achievement Evaluation | `78710-1` | [CvdAchievementCompositionLtCvd](StructureDefinition-cvd-achievement-composition-lt-cvd.html) |
+| SKL01 — Risk Assessment Questionnaire | `83539-7` | CvdRiskAssessmentCompositionLtCvd |
+| SKL02 — Prevention Plan | `77442-2` | CvdPreventionPlanCompositionLtCvd |
+| SKL03 — Achievement Evaluation | `78710-1` | CvdAchievementCompositionLtCvd |
 
 The combined [CvdCompositionLtCvd](StructureDefinition-cvd-composition-lt-cvd.html) (LOINC `51848-0`) can be used when all three sections are bundled into a single document.
 
