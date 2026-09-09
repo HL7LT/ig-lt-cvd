@@ -13,9 +13,11 @@ Alias: $family-member-history-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefi
 Alias: $cvd-chronic-condition-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/cvd-chronic-condition-lt-cvd
 Alias: $risk-group-observation-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd
 Alias: $risk-factor-status-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd
-Alias: $diabetes-duration-status-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/diabetes-duration-status-lt-cvd
+// Moved to LT Lifestyle as DiabetesDurationStatusLtLifestyle; use $diabetes-duration-status-lt-lifestyle-url
+// Alias: $diabetes-duration-status-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/diabetes-duration-status-lt-cvd
 Alias: $ekg-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/ekg-lt-cvd
-Alias: $medication-statement-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/medication-statement-lt-cvd
+// Moved to LT Lifestyle as MedicationStatementLtLifestyle; use $medication-statement-lt-lifestyle-url
+// Alias: $medication-statement-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/medication-statement-lt-cvd
 // Alias: $number-of-steps-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/number-of-steps-lt-cvd
 Alias: $device-physical-activity-lt-cvd-url = https://hl7.lt/fhir/cvd/StructureDefinition/device-physical-activity-lt-cvd
 
