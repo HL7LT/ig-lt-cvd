@@ -264,14 +264,14 @@ In DSTU1, the CarePlan used inline `<goal>` elements with extensions for target 
 * group.element[44].target[0].comment = "mapping.md already covered — ECG. EKGLtCvd. Example: observation-ekg-normal-example."
 
 * group.element[45].code = #ac-medication-context
-* group.element[45].target[0].code = #medication-statement-lt-cvd
+* group.element[45].target[0].code = #medication-statement-lt-lifestyle
 * group.element[45].target[0].relationship = $cm-rel#related-to
-* group.element[45].target[0].comment = "MedicationStatementLtCvd. Example: medication-statement-screening-example."
+* group.element[45].target[0].comment = "MedicationStatementLtLifestyle (LT Lifestyle). StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-statement-lt-lifestyle. Example: medication-statement-screening-example."
 
 * group.element[46].code = #ac-diabetes-duration
-* group.element[46].target[0].code = #diabetes-duration-status-lt-cvd
+* group.element[46].target[0].code = #diabetes-duration-status-lt-lifestyle
 * group.element[46].target[0].relationship = $cm-rel#related-to
-* group.element[46].target[0].comment = "DiabetesDurationStatusLtCvd. Example: observation-diabetes-duration-gt10-example."
+* group.element[46].target[0].comment = "DiabetesDurationStatusLtLifestyle (LT Lifestyle). StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/diabetes-duration-status-lt-lifestyle. Example: observation-diabetes-duration-gt10-example."
 
 Instance: conceptmap-cvd-prevention-plan-questionnaire
 InstanceOf: ConceptMap
