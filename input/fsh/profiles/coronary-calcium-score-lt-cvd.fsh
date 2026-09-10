@@ -16,7 +16,7 @@ Six-level interpretation: 0 (no calcification), 1-10 (minimal), 11-100 (mild),
 * ^publisher = "HL7 Lithuania"
 
 * category = $observation-category#procedure "Procedure"
-* code = $sct#450734004 "Coronary artery calcium score (observable entity)"
+* code = $sct#450734004 "Coronary artery calcium score (assessment scale)"
 * subject 1..
 * subject only Reference(PatientLt)
 * effective[x] 1..
