@@ -9,5 +9,5 @@ Description: "Degree of cardiovascular disease risk according to SCORE2 risk est
 * ^experimental = false
 * $sct#17621005 "Normal (qualifier value)"
 * $sct#255604002 "Mild (qualifier value)"
-* $sct#24484000 "Severe (qualifier value)"
+* $sct#24484000 "Severe (severity modifier) (qualifier value)"
 * $sct#399166001 "Fatal (qualifier value)"

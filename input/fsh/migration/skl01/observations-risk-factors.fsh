@@ -136,8 +136,8 @@ Title: "Observation: Alcohol consumption (SKL01)"
 Description: "Alkoholio vartojimas. Migrated from DSTU1 cid:189."
 * status = #final
 * category = $observation-category#exam "Exam"
-* code = $sct#228272002 "Alcohol consumption (observable entity)"
-// Siin vale snomed kood, kas sobiks 897148007 | Alcoholic beverage intake (observable entity) | ?
+* code = $sct#897148007 "Alcoholic beverage intake (observable entity)"
+// 228272002 was never a SNOMED CT identifier. 897148007 verified against International 2026-09-01.
 * effectiveDateTime = 2014-10-28T08:01:00.000+02:00
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)

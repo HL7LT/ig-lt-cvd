@@ -37,7 +37,7 @@ Captures left ventricular ejection fraction (EF), EF category, and optional esta
 * component[ejectionFraction].valueQuantity.code = #%
 * component[ejectionFraction] ^short = "Left ventricular ejection fraction (%)"
 
-* component[efCategory].code = $sct#364066002 "Cardiac ejection fraction finding (finding)"
+* component[efCategory].code = $sct#70822001 "Cardiac ejection fraction, function (observable entity)"
 * component[efCategory].value[x] only CodeableConcept
 * component[efCategory].valueCodeableConcept from EjectionFractionCategoryVS (required)
 * component[efCategory] ^short = "EF category: preserved (>= 50%), mildly reduced (41-49%), reduced (<= 40%)"

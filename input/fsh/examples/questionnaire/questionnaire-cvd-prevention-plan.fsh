@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: CVD prevention plan and achievement (ESPBI form 2)"
 Description: "Illustrative FHIR Questionnaire for the **CVD prevention measures plan** and **achievement evaluation** electronic form (PDF table 10.10+). Extend with full national field parity in production."
-* url = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan"
+* url = "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-prevention-plan"
 * version = "0.1.0"
 * name = "CvdPreventionPlan"
 * title = "Plan of cardiovascular disease prevention measures and achievement evaluation"
@@ -110,7 +110,7 @@ InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "QuestionnaireResponse: CVD prevention plan and achievement (example)"
 Description: "Example answers for the prevention plan Questionnaire including a follow-up achievement block."
-* questionnaire = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan"
+* questionnaire = "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-prevention-plan"
 * status = #completed
 * subject = Reference(Patient/patient-male-example)
 * authored = "2026-01-15T11:00:00Z"

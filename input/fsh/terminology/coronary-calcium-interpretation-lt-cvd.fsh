@@ -16,7 +16,9 @@ Description: "Six-level interpretation scale for coronary artery calcium (Agatst
 
 ValueSet: CoronaryCalciumInterpretationVS
 Id: coronary-calcium-interpretation
-Title: "Coronary Artery Calcium Score Interpretation"
+// Distinguished from the CodeSystem of the same name, which the publisher
+// rejects as a duplicate table-of-contents entry.
+Title: "Coronary Artery Calcium Score Interpretation Value Set"
 Description: "Six-level interpretation scale for coronary artery calcium (Agatston) score."
 * ^url = $coronary-calcium-interpretation-vs-url
 * ^status = #draft

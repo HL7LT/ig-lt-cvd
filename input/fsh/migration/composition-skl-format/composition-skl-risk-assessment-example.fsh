@@ -40,7 +40,7 @@ Description: "Example composition mirroring SKL01 XML structure; references migr
 * section[0].section[1].section[1].entry = Reference(skl01-list-meds-statement)
 
 * section[0].section[2].title = "ŠKL rizikos veiksniai"
-* section[0].section[2].code = $sct#83539-7 "Cardiology Risk assessment and screening note"
+* section[0].section[2].code = $loinc#83539-7 "Cardiology Risk assessment and screening note"
 * section[0].section[2].entry = Reference(skl01-list-cvd-risk-factors)
 
 * section[0].section[3].title = "Rizikos veiksniai"

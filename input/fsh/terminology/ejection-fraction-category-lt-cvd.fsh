@@ -13,7 +13,9 @@ Description: "Categories for left ventricular ejection fraction (LVEF) classific
 
 ValueSet: EjectionFractionCategoryVS
 Id: ejection-fraction-category
-Title: "Ejection Fraction Category"
+// Distinguished from the CodeSystem of the same name, which the publisher
+// rejects as a duplicate table-of-contents entry.
+Title: "Ejection Fraction Category Value Set"
 Description: "Categories for left ventricular ejection fraction (LVEF) classification."
 * ^url = $ejection-fraction-category-vs-url
 * ^status = #draft

@@ -21,6 +21,13 @@ Description: "Electrocardiogram (EKG/ECG) observation using 12 leads and Sampled
 * code.coding[mdc] = $EKG#131328 "MDC_ECG_ELEC_POTL"
 * code.coding[snomed] = $sct#268400002 "12 lead ECG"
 * code.coding[loinc] = $loinc#11524-6 "EKG study"
+// The assignments above put a patternCoding on each slice, which does fix system,
+// but the publisher looks for an assertion on the discriminator path itself and
+// otherwise reports "Slicing cannot be evaluated". Restating system per slice says
+// nothing new — it just says it where the discriminator is read.
+* code.coding[mdc].system = $EKG
+* code.coding[snomed].system = $sct
+* code.coding[loinc].system = $loinc
 
 * subject 1..
 * subject only Reference(PatientLt)
@@ -36,5 +43,9 @@ Description: "Electrocardiogram (EKG/ECG) observation using 12 leads and Sampled
 * interpretation ^slicing.rules = #open
 * interpretation contains ekgResult 0..* MS
 * interpretation[ekgResult] from EkgResultInterpretationVS (required)
+// EkgResultInterpretationVS is SNOMED CT only, so saying so on the discriminator
+// path makes the slicing evaluable without narrowing the slice. Slicing stays open,
+// so an interpretation outside this value set is still allowed as an unsliced entry.
+* interpretation[ekgResult].coding.system = $sct
 * interpretation[ekgResult] ^short = "ECG findings: normal, abnormal, and/or specific findings (ST-T changes, A-fib, A-flutter, LBBB, etc.)"
 * interpretation[ekgResult] ^definition = "Clinical interpretation of the ECG. Multiple codes may be recorded: a high-level assessment (normal/abnormal) combined with specific finding codes (e.g., atrial fibrillation, ST-T changes). Use Observation.note for free-text 'Other' findings."
