@@ -29,7 +29,9 @@ Description: "Categories for atherosclerotic plaque assessment in carotid arteri
 
 ValueSet: CarotidPlaqueCategoryVS
 Id: carotid-plaque-category
-Title: "Carotid Plaque Category"
+// Distinguished from the CodeSystem of the same name, which the publisher
+// rejects as a duplicate table-of-contents entry.
+Title: "Carotid Plaque Category Value Set"
 Description: "Categories for atherosclerotic plaque assessment in carotid arteries."
 * ^url = $carotid-plaque-category-vs-url
 * ^status = #draft

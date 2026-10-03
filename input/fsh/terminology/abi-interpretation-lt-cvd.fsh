@@ -25,7 +25,9 @@ Description: "Interpretation categories for ankle-brachial index (ABI) periphera
 
 ValueSet: ABIInterpretationVS
 Id: abi-interpretation
-Title: "Ankle-Brachial Index Interpretation"
+// Distinguished from the CodeSystem of the same name, which the publisher
+// rejects as a duplicate table-of-contents entry.
+Title: "Ankle-Brachial Index Interpretation Value Set"
 Description: "Interpretation categories for ankle-brachial index (ABI) peripheral arterial disease severity."
 * ^url = $abi-interpretation-vs-url
 * ^status = #draft

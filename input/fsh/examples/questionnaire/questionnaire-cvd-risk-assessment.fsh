@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: CVD risk assessment (ESPBI form 1)"
 Description: "Illustrative FHIR Questionnaire for the national **patient cardiovascular disease risk assessment** electronic form (PDF tables 10.5–10.9). Extend with full field parity in production."
-* url = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment"
+* url = "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-risk-assessment"
 * version = "0.1.0"
 * name = "CvdRiskAssessment"
 * title = "Patient cardiovascular disease risk assessment questionnaire"
@@ -301,7 +301,7 @@ InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "QuestionnaireResponse: CVD risk assessment (example)"
 Description: "Example answers for the CVD risk assessment Questionnaire, aligned with other CVD IG examples (SCORE2 24%, high risk group)."
-* questionnaire = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment"
+* questionnaire = "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-risk-assessment"
 * status = #completed
 * subject = Reference(Patient/patient-male-example)
 * authored = "2025-10-01T09:00:00Z"
@@ -315,6 +315,15 @@ Description: "Example answers for the CVD risk assessment Questionnaire, aligned
 * item[1].item[0].linkId = "chronic-condition-summary"
 * item[1].item[0].answer.valueString = "Heart failure (I50) — example only"
 
+// Every item the Questionnaire marks required is answered, in Questionnaire order.
+// Values that are arithmetic on answers already in this response are derived, not
+// chosen: bmi-calculated = 88 / 1.78^2; lipid-non-hdl = 5.8 - 1.1; obesity-bmi
+// follows from BMI 27.8 >= 25; abdominal-obesity is "No" because waist 98 cm is
+// below the 102 cm male threshold in the item text; metabolic-syndrome is "No"
+// because only 2 of the 5 NCEP ATP III criteria are met here (triglycerides 1.9
+// and treated hypertension; waist 98, HDL 1.1 and fasting glucose 5.2 are not).
+// Where the form offers "Unknown" and this example never recorded the answer, the
+// response says Unknown rather than inventing one.
 * item[2].linkId = "grp-risk-factors"
 * item[2].item[0].linkId = "risk-factor-hypertension"
 * item[2].item[0].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-treated "There is, treated"
@@ -322,8 +331,25 @@ Description: "Example answers for the CVD risk assessment Questionnaire, aligned
 * item[2].item[1].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-treated "There is, treated"
 * item[2].item[2].linkId = "risk-factor-diabetes"
 * item[2].item[2].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-no "No"
-* item[2].item[3].linkId = "risk-factor-smoking"
-* item[2].item[3].answer.valueCoding = $cvd-questionnaire-options-cs#smoking-never "Did not smoke"
+// Consistent with fasting glucose 5.2 and HbA1c 5.4 below, both within range.
+* item[2].item[3].linkId = "risk-factor-glucose-tolerance"
+* item[2].item[3].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-no "No"
+* item[2].item[4].linkId = "risk-factor-familial-hypercholesterolemia"
+* item[2].item[4].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-no "No"
+* item[2].item[5].linkId = "risk-factor-smoking"
+* item[2].item[5].answer.valueCoding = $cvd-questionnaire-options-cs#smoking-never "Did not smoke"
+// Physical activity and nutrition offer no "unknown" option. These two answers are
+// a reading of an overweight, high-risk example patient — worth a clinical check.
+* item[2].item[6].linkId = "risk-factor-physical-activity"
+* item[2].item[6].answer.valueCoding = $cvd-questionnaire-options-cs#pa-insufficient "Insufficient"
+* item[2].item[7].linkId = "risk-factor-nutrition"
+* item[2].item[7].answer.valueCoding = $cvd-questionnaire-options-cs#nutrition-unbalanced "Unbalanced"
+* item[2].item[8].linkId = "risk-factor-alcohol"
+* item[2].item[8].answer.valueCoding = $cvd-questionnaire-options-cs#alcohol-unknown "Unknown"
+* item[2].item[9].linkId = "risk-factor-family-cvd"
+* item[2].item[9].answer.valueCoding = $cvd-questionnaire-options-cs#family-unknown "Unknown"
+* item[2].item[10].linkId = "risk-factor-family-diabetes"
+* item[2].item[10].answer.valueCoding = $cvd-questionnaire-options-cs#family-unknown "Unknown"
 
 * item[3].linkId = "grp-objective"
 * item[3].item[0].linkId = "height-cm"
@@ -336,22 +362,34 @@ Description: "Example answers for the CVD risk assessment Questionnaire, aligned
 * item[3].item[3].answer.valueDecimal = 132
 * item[3].item[4].linkId = "bp-diastolic"
 * item[3].item[4].answer.valueDecimal = 84
+* item[3].item[5].linkId = "heart-rate"
+* item[3].item[5].answer.valueDecimal = 72
+* item[3].item[6].linkId = "bmi-calculated"
+* item[3].item[6].answer.valueDecimal = 27.8
+* item[3].item[7].linkId = "abdominal-obesity"
+* item[3].item[7].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-no "No"
+* item[3].item[8].linkId = "obesity-bmi"
+* item[3].item[8].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-present "There is"
 
 * item[4].linkId = "grp-lipidogram"
 * item[4].item[0].linkId = "lipid-tc"
 * item[4].item[0].answer.valueDecimal = 5.8
 * item[4].item[1].linkId = "lipid-hdl"
 * item[4].item[1].answer.valueDecimal = 1.1
-* item[4].item[2].linkId = "lipid-ldl"
-* item[4].item[2].answer.valueDecimal = 3.6
-* item[4].item[3].linkId = "lipid-tg"
-* item[4].item[3].answer.valueDecimal = 1.9
+* item[4].item[2].linkId = "lipid-non-hdl"
+* item[4].item[2].answer.valueDecimal = 4.7
+* item[4].item[3].linkId = "lipid-ldl"
+* item[4].item[3].answer.valueDecimal = 3.6
+* item[4].item[4].linkId = "lipid-tg"
+* item[4].item[4].answer.valueDecimal = 1.9
 
 * item[5].linkId = "grp-risk-estimate"
 * item[5].item[0].linkId = "score2-percent"
 * item[5].item[0].answer.valueDecimal = 24
-* item[5].item[1].linkId = "risk-group-cvd"
-* item[5].item[1].answer.valueCoding = $cvd-questionnaire-options-cs#cvd-rg-large "Large"
+* item[5].item[1].linkId = "metabolic-syndrome"
+* item[5].item[1].answer.valueCoding = $cvd-questionnaire-options-cs#risk-factor-no "No"
+* item[5].item[2].linkId = "risk-group-cvd"
+* item[5].item[2].answer.valueCoding = $cvd-questionnaire-options-cs#cvd-rg-large "Large"
 
 * item[6].linkId = "grp-migration-md-parity"
 * item[6].item[0].linkId = "mig-encounter"

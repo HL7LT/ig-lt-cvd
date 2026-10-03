@@ -10,7 +10,7 @@ Description: "An example instance of a CarePlan for a patient at risk of Cardiov
 * description = "Comprehensive plan detailing lifestyle modifications, pharmacological advice, and biometric targets for CVD risk reduction."
 * created = 2025-10-31T10:00:00+02:00
 * subject = Reference(patient-male-example)
-* extension[riskGroup].valueCodeableConcept = $risk-group-lt-cvd-url#very-large "Very large"
+* extension[riskGroup].valueCodeableConcept = $observation-interpretation#HU "Significantly high"
 * contained[0] = goal-ldl
 * contained[+] = goal-bmi
 * contained[+] = goal-bp

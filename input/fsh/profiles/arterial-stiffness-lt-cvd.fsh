@@ -14,7 +14,7 @@ Normal value: < 10 m/s. Values >= 10 m/s indicate increased arterial stiffness.
 * ^publisher = "HL7 Lithuania"
 
 * category = $observation-category#procedure "Procedure"
-* code = $sct#252076005 "Measurement of pulse wave velocity"
+* code = $sct#1379919001 "Pulse wave velocity (observable entity)"
 * subject 1..
 * subject only Reference(PatientLt)
 * effective[x] 1..

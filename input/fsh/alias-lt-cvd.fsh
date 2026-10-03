@@ -46,8 +46,8 @@ Alias: $cvd-questionnaire-options-cs = https://hl7.lt/fhir/cvd/CodeSystem/cvd-qu
 Alias: $cvd-questionnaire-risk-assessment-item-cs-url = https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-risk-assessment-item
 Alias: $cvd-questionnaire-prevention-plan-item-cs-url = https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-prevention-plan-item
 Alias: $cvd-questionnaire-mapping-target-cs-url = https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target
-Alias: $conceptmap-cvd-risk-assessment-questionnaire-url = https://hl7.lt/fhir/cvd/ConceptMap/cvd-risk-assessment-questionnaire
-Alias: $conceptmap-cvd-prevention-plan-questionnaire-url = https://hl7.lt/fhir/cvd/ConceptMap/cvd-prevention-plan-questionnaire
+Alias: $conceptmap-cvd-risk-assessment-questionnaire-url = https://hl7.lt/fhir/cvd/ConceptMap/conceptmap-cvd-risk-assessment-questionnaire
+Alias: $conceptmap-cvd-prevention-plan-questionnaire-url = https://hl7.lt/fhir/cvd/ConceptMap/conceptmap-cvd-prevention-plan-questionnaire
 
 // FHIR R5 ConceptMap target relationship (http://hl7.org/fhir/concept-map-relationship)
 Alias: $cm-rel = http://hl7.org/fhir/concept-map-relationship

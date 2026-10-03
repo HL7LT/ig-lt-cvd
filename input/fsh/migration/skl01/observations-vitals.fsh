@@ -29,9 +29,11 @@ Title: "Observation: Body height (SKL01)"
 Description: "Body height 188 cm. Migrated from DSTU1 cid:8."
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#3137-7 "Body height Measured"
+* code.coding[0] = $loinc#3137-7 "Body height Measured"
+* code.coding[1] = $loinc#8302-2 "Body height"  // required by the core vital-signs profile; the legacy code above is kept
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * valueQuantity = 188 $ucum#cm
+* valueQuantity.unit = "cm"
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
 
@@ -42,10 +44,12 @@ Title: "Observation: Body weight (SKL01)"
 Description: "Kūno svoris 76 kg. Migrated from DSTU1 cid:9."
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#3141-9 "Body weight Measured"
+* code.coding[0] = $loinc#3141-9 "Body weight Measured"
+* code.coding[1] = $loinc#29463-7 "Body weight"  // required by the core vital-signs profile; the legacy code above is kept
 * code.text = "Kūno svoris"
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * valueQuantity = 76 $ucum#kg
+* valueQuantity.unit = "kg"
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
 
@@ -74,6 +78,7 @@ Description: "Liemens apimtis 103 cm. Migrated from DSTU1 cid:194."
 * code.text = "Liemens apimtis"
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * valueQuantity = 103 $ucum#cm
+* valueQuantity.unit = "cm"
 * interpretation = $sct#249533007 "Obese abdomen (finding)"
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
@@ -88,6 +93,7 @@ Description: "KMI 26.23 kg/m2. Migrated from DSTU1 cid:196."
 * code = $loinc#59574-4 "Body mass index (BMI) [Percentile]"
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * valueQuantity = 26.23 $ucum#kg/m2
+* valueQuantity.unit = "kg/m2"
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
 
@@ -95,44 +101,23 @@ Instance: skl01-observation-bp-panel-197
 InstanceOf: ObservationLt
 Usage: #example
 Title: "Observation: Blood pressure panel (SKL01)"
-Description: "Sistolinis ir diastolinis kraujospūdis. Migrated from DSTU1 cid:197."
+Description: "Sistolinis ir diastolinis kraujospūdis. Migrated from DSTU1 cid:197, with the systolic and diastolic readings from cid:1971 and cid:1981 folded in as components."
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#55284-4 "Blood pressure systolic and diastolic"
+// 85354-9 is the code the core bp profile requires; the migrated 55284-4 is kept
+// alongside it so the original coding is still on the record.
+* code.coding[0] = $loinc#85354-9 "Blood pressure panel with all children optional"
+* code.coding[1] = $loinc#55284-4 "Blood pressure systolic and diastolic"
 * code.text = "Sistolinis ir diastolinis kraujospūdis"
 * effectiveDateTime = 2014-10-22T16:13:54+02:00
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)
-* hasMember[0] = Reference(skl01-observation-systolic-1971)
-* hasMember[1] = Reference(skl01-observation-diastolic-1981)
-
-Instance: skl01-observation-systolic-1971
-InstanceOf: ObservationLt
-Usage: #example
-Title: "Observation: Systolic BP (SKL01)"
-Description: "Kraujospūdis: sistolinis 107 mm[Hg]. Migrated from DSTU1 cid:1971."
-* status = #final
-* category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8480-6 "Systolic blood pressure"
-* code.text = "Kraujospūdis: sistolinis"
-* effectiveDateTime = 2014-10-22T16:13:54+02:00
-* valueQuantity = 107 $ucum#mm[Hg]
-* subject = Reference(patient-male-example)
-* performer = Reference(practitioner-example)
-
-Instance: skl01-observation-diastolic-1981
-InstanceOf: ObservationLt
-Usage: #example
-Title: "Observation: Diastolic BP (SKL01)"
-Description: "Kraujospūdis: diastolinis 60 mm[Hg]. Migrated from DSTU1 cid:1981."
-* status = #final
-* category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8462-4 "Diastolic blood pressure"
-* code.text = "Kraujospūdis: diastolinis"
-* effectiveDateTime = 2014-10-22T16:13:54+02:00
-* valueQuantity = 60 $ucum#mm[Hg]
-* subject = Reference(patient-male-example)
-* performer = Reference(practitioner-example)
+* component[0].code = $loinc#8480-6 "Systolic blood pressure"
+* component[0].valueQuantity = 107 $ucum#mm[Hg]
+* component[0].valueQuantity.unit = "mm[Hg]"
+* component[1].code = $loinc#8462-4 "Diastolic blood pressure"
+* component[1].valueQuantity = 60 $ucum#mm[Hg]
+* component[1].valueQuantity.unit = "mm[Hg]"
 
 Instance: skl01-observation-heart-rate-199
 InstanceOf: ObservationLt
@@ -141,9 +126,11 @@ Title: "Observation: Heart rate (SKL01)"
 Description: "Širdies susitraukimų dažnis 72 bpm. Migrated from DSTU1 cid:199."
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
-* code = $loinc#8886-4 "Heart rate method"
+// was $loinc#8886-4: 8886-4 is "Heart rate method", not the rate itself
+* code = $loinc#8867-4 "Heart rate"
 * code.text = "Širdies susitraukimų dažnis"
 * effectiveDateTime = 2012-09-17T16:13:54+02:00
 * valueQuantity = 72 $ucum#/min
+* valueQuantity.unit = "/min"
 * subject = Reference(patient-male-example)
 * performer = Reference(practitioner-example)

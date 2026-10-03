@@ -61,7 +61,9 @@ Description: "CVD questionnaire/plan narrative composition: local CVD profiles p
 * section[0].section[4].entry[0] = Reference(Observation/observation-total-cholesterol-example)
 * section[0].section[4].entry[+] = Reference(Observation/observation-cholesterol-hdl-example)
 * section[0].section[4].entry[+] = Reference(Observation/observation-cholesterol-ldl-example)
-* section[0].section[4].entry[+] = Reference(Observation/observation-triglycerides-example)
+// LT Pathology names this example observation-triglycerides-standalone-example;
+// its seven siblings in this section use the observation-<x>-example form.
+* section[0].section[4].entry[+] = Reference(Observation/observation-triglycerides-standalone-example)
 * section[0].section[4].entry[+] = Reference(Observation/observation-glucose-venous-example)
 * section[0].section[4].entry[+] = Reference(Observation/observation-hba1c-example)
 * section[0].section[4].entry[+] = Reference(Observation/observation-creatinine-test-example)

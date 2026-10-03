@@ -13,7 +13,7 @@ Description: "Anchor resource for the Lithuanian CVD prevention programme docume
 * identifier 1..* MS
 * status 1..1 MS
 * category 1..1 MS
-* category = http://terminology.hl7.org/CodeSystem/v2-0074#CTG "Cardiology"
+* category = http://terminology.hl7.org/CodeSystem/v2-0074#OTH "Other"
 * category ^short = "Diagnostic service section; CTG (Cardiology) reflects the cardiovascular nature of this screening programme report."
 * code 1..1 MS
 * code = $sct#827181004 "Risk of cardiovascular disease"

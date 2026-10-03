@@ -25,7 +25,11 @@ In DSTU1, the CarePlan used inline `<goal>` elements with extensions for target 
   in `CarePlan.note` or `CarePlan.supportingInfo.display`.
 """
 * url = $conceptmap-cvd-risk-assessment-questionnaire-url
-* sourceScopeUri = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-risk-assessment"
+// ConceptMap.sourceScope must identify a ValueSet; it named the source
+// Questionnaire (https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-risk-assessment),
+// which the validator rejects. The machine-readable link to the form items is
+// group.source below, which names the linkId CodeSystem; the Questionnaire itself
+// is identified in the description above.
 * version = "0.1.0"
 * name = "CvdRiskAssessmentQuestionnaireItemMap"
 * title = "CVD risk assessment questionnaire item to profile mapping"
@@ -280,7 +284,11 @@ Usage: #definition
 Title: "CVD prevention plan Questionnaire item → profile mapping"
 Description: "Maps ESPBI form 2 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. Human-readable narrative is in each target.comment. Source: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target)."
 * url = $conceptmap-cvd-prevention-plan-questionnaire-url
-* sourceScopeUri = "https://hl7.lt/fhir/cvd/Questionnaire/cvd-prevention-plan"
+// ConceptMap.sourceScope must identify a ValueSet; it named the source
+// Questionnaire (https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-prevention-plan),
+// which the validator rejects. The machine-readable link to the form items is
+// group.source below, which names the linkId CodeSystem; the Questionnaire itself
+// is identified in the description above.
 * version = "0.1.0"
 * name = "CvdPreventionPlanQuestionnaireItemMap"
 * title = "CVD prevention plan questionnaire item to profile mapping"

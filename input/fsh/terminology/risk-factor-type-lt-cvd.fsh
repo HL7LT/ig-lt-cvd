@@ -19,4 +19,4 @@ men >= 102 cm, women >= 88 cm.
 * $sct#9414007   "Impaired glucose tolerance (disorder)"
 * $sct#390951007 "Impaired fasting glycemia (disorder)"
 * $sct#473145005 "Possible familial hypercholesterolemia (situation)"
-* $sct#248311001 "Central obesity (finding)"
+* $sct#248311001 "Central obesity (disorder)"

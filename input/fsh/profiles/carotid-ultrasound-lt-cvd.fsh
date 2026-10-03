@@ -15,7 +15,9 @@ for right and left common carotid arteries. IMT > 1.5 mm is considered pathologi
 * ^publisher = "HL7 Lithuania"
 
 * category = $observation-category#procedure "Procedure"
-* code = $sct#241463004 "Ultrasound scan of carotid artery (procedure)"
+// Code corrected: 241463004 is "Ultrasound angiography of blood vessel of neck — not carotid-specific" in SNOMED CT,
+// not what the display beside it said. 276021004 is the concept meant.
+* code = $sct#276021004 "Ultrasonography of carotid artery"
 * subject 1..
 * subject only Reference(PatientLt)
 * effective[x] 1..

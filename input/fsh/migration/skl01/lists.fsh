@@ -41,7 +41,7 @@ InstanceOf: List
 Usage: #example
 Title: "List: CVD risk factors (SKL01)"
 Description: "ŠKL rizikos veiksniai. Migrated from DSTU1 cid:18cvd."
-* code = $sct#83539-7 "Cardiology Risk assessment and screening note"
+* code = $loinc#83539-7 "Cardiology Risk assessment and screening note"
 * code.text = "ŠKL rizikos veiksniai"
 * mode = #working
 * status = #current
